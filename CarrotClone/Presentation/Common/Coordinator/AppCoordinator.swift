@@ -25,12 +25,12 @@ final class AppCoordinator: BaseCoordinator<Void> {
     override func start() -> Observable<Void> {
         setup(with: window)
         showLogin()
-        showTab()
+//        showTab()
         return Observable.never()
     }
     
     private func showLogin() {
-        navigationController.setNavigationBarHidden(false, animated: true)
+        navigationController.setNavigationBarHidden(true, animated: true)
         let login = LoginCoordinator(navigationController)
         coordinate(to: login)
             .subscribe(onNext: { [weak self] in

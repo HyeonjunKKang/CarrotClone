@@ -55,7 +55,20 @@ final class LoginMainViewController: ViewController {
         $0.titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
     }
     
+    // MARK: - Properties
+    
+    let viewModel: LoginMainViewModel
+    
     // MARK: - Inits
+    
+    init(viewModel: LoginMainViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - LifeCycle
     

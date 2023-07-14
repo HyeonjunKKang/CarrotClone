@@ -24,20 +24,22 @@ final class LoginCoordinator: BaseCoordinator<LoginCoordinatorResult> {
     // MARK: - 로그인
     
     func showLogin() {
-//        guard let viewModel = DIContainer.shared.container.resolve(LoginViewModel.self) else { return }
+        guard let viewModel = DIContainer.shared.container.resolve(LoginMainViewModel.self) else { return }
         
-//        viewModel.navigation
-//            .subscribe(onNext: { [weak self] in
-//                switch $0 {
-//                case .signup:
-//                    self?.showEmail()
-//                case .finish:
-//                    self?.finish.onNext(.finish)
-//                }
-//            })
-//            .disposed(by: disposeBag)
-        
-        let viewController = LoginMainViewController()
+        viewModel.navigation
+            .subscribe(onNext: { [weak self] in
+                switch $0 {
+                case .signup:
+                    break
+                case .login:
+                    break
+                case .autologin:
+                    self?.finish.onNext(.finish)
+                }
+            })
+            .disposed(by: disposeBag)
+//
+        let viewController = LoginMainViewController(viewModel: viewModel)
         push(viewController, animated: true, isRoot: true)
     }
     

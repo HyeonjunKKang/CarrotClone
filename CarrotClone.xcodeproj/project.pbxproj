@@ -51,6 +51,7 @@
 		FAEDB0172A559CCB004C4E5A /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDB0162A559CCB004C4E5A /* BaseCoordinator.swift */; };
 		FAEDB0192A559CF2004C4E5A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDB0182A559CF2004C4E5A /* AppCoordinator.swift */; };
 		FAEEC01B2A616BED0016E2A1 /* UIColor+CarrotColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEC01A2A616BED0016E2A1 /* UIColor+CarrotColor.swift */; };
+		FAEEC01D2A6171340016E2A1 /* LoginMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEC01C2A6171340016E2A1 /* LoginMainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		FAEDB0162A559CCB004C4E5A /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		FAEDB0182A559CF2004C4E5A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		FAEEC01A2A616BED0016E2A1 /* UIColor+CarrotColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CarrotColor.swift"; sourceTree = "<group>"; };
+		FAEEC01C2A6171340016E2A1 /* LoginMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 		FA6DE6F92A61620600E80A0D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FAEEC01C2A6171340016E2A1 /* LoginMainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -618,6 +621,7 @@
 				FA6DE6E52A5ECCE800E80A0D /* ChatCoordinator.swift in Sources */,
 				FAEDB0112A559BA8004C4E5A /* ViewModel.swift in Sources */,
 				FA6DE6F72A6161A400E80A0D /* LoginCoordinator.swift in Sources */,
+				FAEEC01D2A6171340016E2A1 /* LoginMainViewModel.swift in Sources */,
 				FAEDB0132A559BFD004C4E5A /* Identifiable.swift in Sources */,
 				FA63294D2A56E94D00B8BE01 /* View.swift in Sources */,
 				FA6DE6E32A5ECCE000E80A0D /* HomeCoordinator.swift in Sources */,
