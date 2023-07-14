@@ -50,6 +50,7 @@
 		FAEDB0152A559C34004C4E5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDB0142A559C34004C4E5A /* ViewController.swift */; };
 		FAEDB0172A559CCB004C4E5A /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDB0162A559CCB004C4E5A /* BaseCoordinator.swift */; };
 		FAEDB0192A559CF2004C4E5A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDB0182A559CF2004C4E5A /* AppCoordinator.swift */; };
+		FAEEC01B2A616BED0016E2A1 /* UIColor+CarrotColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEC01A2A616BED0016E2A1 /* UIColor+CarrotColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		FAEDB0142A559C34004C4E5A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FAEDB0162A559CCB004C4E5A /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		FAEDB0182A559CF2004C4E5A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		FAEEC01A2A616BED0016E2A1 /* UIColor+CarrotColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CarrotColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 				FAEDAFF92A55982E004C4E5A /* Domain */,
 				FAEDAFFA2A559831004C4E5A /* Presentation */,
 				FAEDB01A2A559DDC004C4E5A /* Service */,
+				FAEEC0182A616BCE0016E2A1 /* Util */,
 			);
 			path = CarrotClone;
 			sourceTree = "<group>";
@@ -443,6 +446,22 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		FAEEC0182A616BCE0016E2A1 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FAEEC0192A616BDF0016E2A1 /* Extension */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		FAEEC0192A616BDF0016E2A1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FAEEC01A2A616BED0016E2A1 /* UIColor+CarrotColor.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -612,6 +631,7 @@
 				FA6329472A56E28600B8BE01 /* UserUseCase.swift in Sources */,
 				FA6329512A56E96100B8BE01 /* HomeViewModel.swift in Sources */,
 				FA6DE6E72A5ECCFE00E80A0D /* MyCarrotCoordinator.swift in Sources */,
+				FAEEC01B2A616BED0016E2A1 /* UIColor+CarrotColor.swift in Sources */,
 				FA63293D2A56E24E00B8BE01 /* Keychain.swift in Sources */,
 				FA63294F2A56E95A00B8BE01 /* HomeViewController.swift in Sources */,
 				FA6329432A56E27900B8BE01 /* UserRepositoryProtocol.swift in Sources */,
