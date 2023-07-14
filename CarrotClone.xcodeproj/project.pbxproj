@@ -24,6 +24,8 @@
 		FA6DE6E72A5ECCFE00E80A0D /* MyCarrotCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6DE6E62A5ECCFE00E80A0D /* MyCarrotCoordinator.swift */; };
 		FA6DE6EA2A5ECE2900E80A0D /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6DE6E92A5ECE2900E80A0D /* ChatListViewController.swift */; };
 		FA6DE6ED2A5ECE5600E80A0D /* MyCarrotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6DE6EC2A5ECE5600E80A0D /* MyCarrotViewController.swift */; };
+		FA6DE6F72A6161A400E80A0D /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6DE6F62A6161A400E80A0D /* LoginCoordinator.swift */; };
+		FA6DE6FD2A61621700E80A0D /* LoginMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6DE6FC2A61621700E80A0D /* LoginMainViewController.swift */; };
 		FAEDAFAC2A5593DA004C4E5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDAFAB2A5593DA004C4E5A /* AppDelegate.swift */; };
 		FAEDAFAE2A5593DA004C4E5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDAFAD2A5593DA004C4E5A /* SceneDelegate.swift */; };
 		FAEDAFB52A5593E1004C4E5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAEDAFB42A5593E1004C4E5A /* Assets.xcassets */; };
@@ -85,6 +87,8 @@
 		FA6DE6E62A5ECCFE00E80A0D /* MyCarrotCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCarrotCoordinator.swift; sourceTree = "<group>"; };
 		FA6DE6E92A5ECE2900E80A0D /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		FA6DE6EC2A5ECE5600E80A0D /* MyCarrotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCarrotViewController.swift; sourceTree = "<group>"; };
+		FA6DE6F62A6161A400E80A0D /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		FA6DE6FC2A61621700E80A0D /* LoginMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMainViewController.swift; sourceTree = "<group>"; };
 		FAEDAFA82A5593DA004C4E5A /* CarrotClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarrotClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAEDAFAB2A5593DA004C4E5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAEDAFAD2A5593DA004C4E5A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +158,38 @@
 				FA6DE6EC2A5ECE5600E80A0D /* MyCarrotViewController.swift */,
 			);
 			path = MyCarrot;
+			sourceTree = "<group>";
+		};
+		FA6DE6F82A6161FC00E80A0D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FA6DE6FB2A61620F00E80A0D /* View */,
+				FA6DE6FA2A61620B00E80A0D /* ViewController */,
+				FA6DE6F92A61620600E80A0D /* ViewModel */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FA6DE6F92A61620600E80A0D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FA6DE6FA2A61620B00E80A0D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FA6DE6FC2A61621700E80A0D /* LoginMainViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		FA6DE6FB2A61620F00E80A0D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		FAEDAF9F2A5593D9004C4E5A = {
@@ -230,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				FAEDAFFB2A55986B004C4E5A /* Common */,
+				FA6DE6F82A6161FC00E80A0D /* Login */,
 				FAEDB0002A559914004C4E5A /* Home */,
 				FA6DE6E82A5ECE1400E80A0D /* Chat */,
 				FA6DE6EB2A5ECE4100E80A0D /* MyCarrot */,
@@ -253,6 +290,7 @@
 			children = (
 				FAEDB0162A559CCB004C4E5A /* BaseCoordinator.swift */,
 				FAEDB0182A559CF2004C4E5A /* AppCoordinator.swift */,
+				FA6DE6F62A6161A400E80A0D /* LoginCoordinator.swift */,
 				FA6DE6E02A5ECB0400E80A0D /* TabCoordinator.swift */,
 				FA6DE6E22A5ECCE000E80A0D /* HomeCoordinator.swift */,
 				FA6DE6E42A5ECCE800E80A0D /* ChatCoordinator.swift */,
@@ -560,6 +598,7 @@
 				FA6329412A56E26900B8BE01 /* UserRepository.swift in Sources */,
 				FA6DE6E52A5ECCE800E80A0D /* ChatCoordinator.swift in Sources */,
 				FAEDB0112A559BA8004C4E5A /* ViewModel.swift in Sources */,
+				FA6DE6F72A6161A400E80A0D /* LoginCoordinator.swift in Sources */,
 				FAEDB0132A559BFD004C4E5A /* Identifiable.swift in Sources */,
 				FA63294D2A56E94D00B8BE01 /* View.swift in Sources */,
 				FA6DE6E32A5ECCE000E80A0D /* HomeCoordinator.swift in Sources */,
@@ -576,6 +615,7 @@
 				FA63293D2A56E24E00B8BE01 /* Keychain.swift in Sources */,
 				FA63294F2A56E95A00B8BE01 /* HomeViewController.swift in Sources */,
 				FA6329432A56E27900B8BE01 /* UserRepositoryProtocol.swift in Sources */,
+				FA6DE6FD2A61621700E80A0D /* LoginMainViewController.swift in Sources */,
 				FA6DE6ED2A5ECE5600E80A0D /* MyCarrotViewController.swift in Sources */,
 				FAEDB0172A559CCB004C4E5A /* BaseCoordinator.swift in Sources */,
 				FA6329492A56E29400B8BE01 /* InputView.swift in Sources */,
