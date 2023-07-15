@@ -17,4 +17,7 @@ struct CarrotColor {
     
     /// 회색 142 146 154
     let gray1 = UIColor(named: "gray1")
+    
+    /// 회색 223 224 249
+    let lightgray1 = UIColor(named: "lightgray1")
 }

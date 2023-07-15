@@ -75,7 +75,20 @@ final class LoginMainViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        layout()
+        
+    }
+    
+    // MARK: - Bind
+    
+    override func bind() {
+        let input = LoginMainViewModel.Input(
+            signupStartButtonTap: signupStartButton.rx.tap
+                .throttle(.seconds(1), scheduler: MainScheduler.asyncInstance),
+            loginButtonTap: loginButton.rx.tap
+                .throttle(.seconds(1), scheduler: MainScheduler.asyncInstance)
+        )
+        
+        let output = viewModel.transform(input: input)
     }
     
     // MARK: - Methods

@@ -18,6 +18,7 @@ final class LoginCoordinator: BaseCoordinator<LoginCoordinatorResult> {
     
     override func start() -> Observable<LoginCoordinatorResult> {
         showLogin()
+//        showSignup()
         return finish
     }
     
@@ -30,7 +31,7 @@ final class LoginCoordinator: BaseCoordinator<LoginCoordinatorResult> {
             .subscribe(onNext: { [weak self] in
                 switch $0 {
                 case .signup:
-                    break
+                    self?.showSignup()
                 case .login:
                     break
                 case .autologin:
@@ -45,18 +46,18 @@ final class LoginCoordinator: BaseCoordinator<LoginCoordinatorResult> {
     
     // MARK: - 회원가입 (이메일)
 
-//    func showEmail() {
-//        let email = EmailCoordinator(navigationController)
-//
-//        coordinate(to: email)
-//            .subscribe(onNext: { [weak self] in
-//                switch $0 {
-//                case .finish(let result):
-//                    if result { self?.finish.onNext(.finish) }
-//                case .back:
-//                    break
-//                }
-//            })
-//            .disposed(by: disposeBag)
-//    }
+    func showSignup() {
+        let signup = SignupPhoneNumberCoordinator(navigationController)
+
+        coordinate(to: signup)
+            .subscribe(onNext: { [weak self] in
+                switch $0 {
+                case .finish(let result):
+                    if result { self?.finish.onNext(.finish) }
+                case .back:
+                    break
+                }
+            })
+            .disposed(by: disposeBag)
+    }
 }

@@ -30,6 +30,7 @@ final class SignupPhoneNumberViewController: ViewController {
     }
     
     private let phonenumberInputTextField = UITextField().then {
+        $0.keyboardType = .numberPad
         $0.font = .systemFont(ofSize: 16, weight: .semibold)
         $0.placeholder = "휴대폰 번호(- 없이 숫자만 입력)"
         $0.layer.cornerRadius = 5
@@ -49,6 +50,7 @@ final class SignupPhoneNumberViewController: ViewController {
         $0.clipsToBounds = true
         $0.layer.borderColor = UIColor.carrotColor.lightgray1?.cgColor ?? UIColor.lightGray.cgColor
         $0.layer.borderWidth = 1
+        $0.isEnabled = false
     }
     
     // MARK: - Properties
@@ -72,6 +74,71 @@ final class SignupPhoneNumberViewController: ViewController {
         super.viewDidLoad()
         
         
+    }
+    
+    // MARK: - Bind
+    override func bind() {
+        let input = SignupPhoneNumberViewModel.Input(
+            backButtonTapped: backButton.rx.tap
+                .throttle(.seconds(1), scheduler: MainScheduler.asyncInstance),
+            sendAuthButtonTapped: sendAuthMessageButton.rx.tap
+                .throttle(.seconds(1), scheduler: MainScheduler.asyncInstance),
+            inputPhoneNumber: phonenumberInputTextField.rx.text.asObservable()
+        )
+        
+        let output = viewModel.transform(input: input)
+        
+        bindTextField()
+    }
+    
+    func bindTextField() {
+        let a = phonenumberInputTextField.isFirstResponder
+        
+        phonenumberInputTextField.rx.isFirstResponder
+            .withUnretained(self)
+            .subscribe(onNext: { vc, bool in
+                if bool {
+                    vc.phonenumberInputTextField.layer.borderColor = UIColor.black.cgColor
+                } else {
+                    vc.phonenumberInputTextField.layer.borderColor = UIColor.carrotColor.lightgray1?.cgColor ?? UIColor.lightGray.cgColor
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        phonenumberInputTextField.rx.text
+            .orEmpty
+            .map { text -> String in
+                return text.filter { $0.isNumber }
+            }
+            .bind(to: phonenumberInputTextField.rx.text)
+            .disposed(by: disposeBag)
+        
+        let buttonEnable = phonenumberInputTextField.rx.text
+            .orEmpty
+            .map { text -> Bool in
+                return text.count == 11
+            }
+            .asDriver(onErrorJustReturn: false)
+        
+        buttonEnable
+            .drive(sendAuthMessageButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        buttonEnable
+            .asObservable()
+            .subscribe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] in
+                if $0 {
+                    self?.sendAuthMessageButton.backgroundColor = .carrotColor.carrot1
+                    self?.sendAuthMessageButton.setTitleColor(UIColor.white, for: .normal)
+                } else {
+                    self?.sendAuthMessageButton.backgroundColor = .white
+                    self?.sendAuthMessageButton.setTitleColor(UIColor.lightGray, for: .normal)
+
+                }
+            })
+            .disposed(by: disposeBag)
+
     }
     
     // MARK: - Methods

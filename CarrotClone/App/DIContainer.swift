@@ -42,5 +42,10 @@ final class DIContainer {
             let viewModel = LoginMainViewModel()
             return viewModel
         }
+        
+        container.register(SignupPhoneNumberViewModel.self) { _ in
+            let viewModel = SignupPhoneNumberViewModel()
+            return viewModel
+        }
     }
 }

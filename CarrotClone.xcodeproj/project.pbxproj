@@ -52,6 +52,12 @@
 		FAEDB0192A559CF2004C4E5A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDB0182A559CF2004C4E5A /* AppCoordinator.swift */; };
 		FAEEC01B2A616BED0016E2A1 /* UIColor+CarrotColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEC01A2A616BED0016E2A1 /* UIColor+CarrotColor.swift */; };
 		FAEEC01D2A6171340016E2A1 /* LoginMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEC01C2A6171340016E2A1 /* LoginMainViewModel.swift */; };
+		FAEEC01F2A6266730016E2A1 /* SignupPhoneNumberCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEC01E2A6266730016E2A1 /* SignupPhoneNumberCoordinator.swift */; };
+		FAEEC0222A62694B0016E2A1 /* SignupPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEC0212A62694B0016E2A1 /* SignupPhoneNumberViewController.swift */; };
+		FAEEC0252A627A5E0016E2A1 /* SignupPhoneNumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEC0242A627A5E0016E2A1 /* SignupPhoneNumberViewModel.swift */; };
+		FAEEC0282A6292740016E2A1 /* UITextField + Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEC0272A6292730016E2A1 /* UITextField + Rx.swift */; };
+		FAEEC02A2A62A0B10016E2A1 /* CertifyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEC0292A62A0B10016E2A1 /* CertifyCoordinator.swift */; };
+		FAEEC02C2A62A1910016E2A1 /* CertifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEC02B2A62A1910016E2A1 /* CertifyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +117,12 @@
 		FAEDB0182A559CF2004C4E5A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		FAEEC01A2A616BED0016E2A1 /* UIColor+CarrotColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CarrotColor.swift"; sourceTree = "<group>"; };
 		FAEEC01C2A6171340016E2A1 /* LoginMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMainViewModel.swift; sourceTree = "<group>"; };
+		FAEEC01E2A6266730016E2A1 /* SignupPhoneNumberCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPhoneNumberCoordinator.swift; sourceTree = "<group>"; };
+		FAEEC0212A62694B0016E2A1 /* SignupPhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPhoneNumberViewController.swift; sourceTree = "<group>"; };
+		FAEEC0242A627A5E0016E2A1 /* SignupPhoneNumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPhoneNumberViewModel.swift; sourceTree = "<group>"; };
+		FAEEC0272A6292730016E2A1 /* UITextField + Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Rx.swift"; sourceTree = "<group>"; };
+		FAEEC0292A62A0B10016E2A1 /* CertifyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertifyCoordinator.swift; sourceTree = "<group>"; };
+		FAEEC02B2A62A1910016E2A1 /* CertifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertifyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +285,7 @@
 			children = (
 				FAEDAFFB2A55986B004C4E5A /* Common */,
 				FA6DE6F82A6161FC00E80A0D /* Login */,
+				FAEEC0202A6269120016E2A1 /* Signup */,
 				FAEDB0002A559914004C4E5A /* Home */,
 				FA6DE6E82A5ECE1400E80A0D /* Chat */,
 				FA6DE6EB2A5ECE4100E80A0D /* MyCarrot */,
@@ -297,6 +310,8 @@
 				FAEDB0162A559CCB004C4E5A /* BaseCoordinator.swift */,
 				FAEDB0182A559CF2004C4E5A /* AppCoordinator.swift */,
 				FA6DE6F62A6161A400E80A0D /* LoginCoordinator.swift */,
+				FAEEC01E2A6266730016E2A1 /* SignupPhoneNumberCoordinator.swift */,
+				FAEEC0292A62A0B10016E2A1 /* CertifyCoordinator.swift */,
 				FA6DE6E02A5ECB0400E80A0D /* TabCoordinator.swift */,
 				FA6DE6E22A5ECCE000E80A0D /* HomeCoordinator.swift */,
 				FA6DE6E42A5ECCE800E80A0D /* ChatCoordinator.swift */,
@@ -461,8 +476,35 @@
 			isa = PBXGroup;
 			children = (
 				FAEEC01A2A616BED0016E2A1 /* UIColor+CarrotColor.swift */,
+				FAEEC0272A6292730016E2A1 /* UITextField + Rx.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		FAEEC0202A6269120016E2A1 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				FAEEC0262A627C2D0016E2A1 /* ViewController */,
+				FAEEC0232A627A4E0016E2A1 /* ViewModel */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		FAEEC0232A627A4E0016E2A1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FAEEC0242A627A5E0016E2A1 /* SignupPhoneNumberViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FAEEC0262A627C2D0016E2A1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FAEEC0212A62694B0016E2A1 /* SignupPhoneNumberViewController.swift */,
+				FAEEC02B2A62A1910016E2A1 /* CertifyViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -616,6 +658,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAEEC0252A627A5E0016E2A1 /* SignupPhoneNumberViewModel.swift in Sources */,
 				FA6329452A56E27F00B8BE01 /* User.swift in Sources */,
 				FA6329412A56E26900B8BE01 /* UserRepository.swift in Sources */,
 				FA6DE6E52A5ECCE800E80A0D /* ChatCoordinator.swift in Sources */,
@@ -634,14 +677,19 @@
 				FA6DE6E12A5ECB0400E80A0D /* TabCoordinator.swift in Sources */,
 				FA6329472A56E28600B8BE01 /* UserUseCase.swift in Sources */,
 				FA6329512A56E96100B8BE01 /* HomeViewModel.swift in Sources */,
+				FAEEC01F2A6266730016E2A1 /* SignupPhoneNumberCoordinator.swift in Sources */,
 				FA6DE6E72A5ECCFE00E80A0D /* MyCarrotCoordinator.swift in Sources */,
+				FAEEC02A2A62A0B10016E2A1 /* CertifyCoordinator.swift in Sources */,
+				FAEEC02C2A62A1910016E2A1 /* CertifyViewController.swift in Sources */,
 				FAEEC01B2A616BED0016E2A1 /* UIColor+CarrotColor.swift in Sources */,
 				FA63293D2A56E24E00B8BE01 /* Keychain.swift in Sources */,
 				FA63294F2A56E95A00B8BE01 /* HomeViewController.swift in Sources */,
 				FA6329432A56E27900B8BE01 /* UserRepositoryProtocol.swift in Sources */,
 				FA6DE6FD2A61621700E80A0D /* LoginMainViewController.swift in Sources */,
 				FA6DE6ED2A5ECE5600E80A0D /* MyCarrotViewController.swift in Sources */,
+				FAEEC0282A6292740016E2A1 /* UITextField + Rx.swift in Sources */,
 				FAEDB0172A559CCB004C4E5A /* BaseCoordinator.swift in Sources */,
+				FAEEC0222A62694B0016E2A1 /* SignupPhoneNumberViewController.swift in Sources */,
 				FA6329492A56E29400B8BE01 /* InputView.swift in Sources */,
 				FAEDAFAC2A5593DA004C4E5A /* AppDelegate.swift in Sources */,
 				FAEDAFAE2A5593DA004C4E5A /* SceneDelegate.swift in Sources */,
