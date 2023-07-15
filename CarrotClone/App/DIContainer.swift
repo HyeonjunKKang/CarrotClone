@@ -14,7 +14,11 @@ final class DIContainer {
     private init() {}
     
     func inject(){
-        
+        registerServices()
+        registerDataSources()
+        registerRepositories()
+        registerUseCases()
+        registerViewModels()
     }
     
     private func registerServices() {
@@ -34,6 +38,14 @@ final class DIContainer {
     }
     
     private func registerViewModels() {
+        container.register(LoginMainViewModel.self) { _ in
+            let viewModel = LoginMainViewModel()
+            return viewModel
+        }
         
+        container.register(SignupPhoneNumberViewModel.self) { _ in
+            let viewModel = SignupPhoneNumberViewModel()
+            return viewModel
+        }
     }
 }
