@@ -39,7 +39,7 @@ final class HomeCoordinator: BaseCoordinator<HomeCoordinatorResult> {
 //
 //        let viewController = LoginViewController(viewModel: viewModel)
         
-        let viewController = HomeViewController()
+        let viewController = HomeViewController(viewModel: HomeViewModel())
         push(viewController, animated: true, isRoot: true)
     }
 }
