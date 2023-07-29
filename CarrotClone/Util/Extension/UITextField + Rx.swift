@@ -24,3 +24,11 @@ extension Reactive where Base: UITextField {
         })
     }
 }
+
+extension Reactive where Base: UIButton {
+    var title: Binder<String> {
+        return Binder(base) { button, string in
+            button.setTitle(string, for: .normal)
+        }
+    }
+}

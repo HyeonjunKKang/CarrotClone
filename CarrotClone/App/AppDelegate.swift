@@ -13,10 +13,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
         FirebaseApp.configure()
         DIContainer.shared.inject()
+        
+        // 알림을 보내고자 합니다 라는 권한 요청 코드
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { bool,error in
+            
+        }
         
         return true
     }

@@ -92,8 +92,6 @@ final class SignupPhoneNumberViewController: ViewController {
     }
     
     func bindTextField() {
-        let a = phonenumberInputTextField.isFirstResponder
-        
         phonenumberInputTextField.rx.isFirstResponder
             .withUnretained(self)
             .subscribe(onNext: { vc, bool in

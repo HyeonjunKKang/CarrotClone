@@ -15,9 +15,13 @@ struct CarrotColor {
     /// 당근색 237 119 50
     let carrot1 = UIColor(named: "Carrot1")
     
-    /// 회색 142 146 154
+    /// 142 146 154
     let gray1 = UIColor(named: "gray1")
+    /// 220 222 226
+    let gray2 = UIColor(named: "gray2")
+    /// 174 177 185
+    let gray3 = UIColor(named: "gray3")
     
-    /// 회색 223 224 249
+    /// 223 224 249
     let lightgray1 = UIColor(named: "lightgray1")
 }

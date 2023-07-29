@@ -35,8 +35,23 @@ final class CertifyCoordinator: BaseCoordinator<CertifyCoordinatorResult> {
     }
     
     func showCertify(){
-        let viewController = CertifyViewController()
-        viewController.number = phoneNumber
+        guard let viewModel = DIContainer.shared.container.resolve(CertifyViewModel.self) else { return }
+        
+        viewModel.inputPhonenumber.onNext(phoneNumber)
+        
+        viewModel.navigation
+            .subscribe(onNext: { [weak self] in
+                switch $0 {
+                case .back:
+                    self?.finish.onNext(.back)
+                case .finish:
+                    break
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        let viewController = CertifyViewController(viewModel: viewModel)
+
         push(viewController, animated: true)
     }
 }

@@ -44,7 +44,7 @@ final class LoginCoordinator: BaseCoordinator<LoginCoordinatorResult> {
         push(viewController, animated: true, isRoot: true)
     }
     
-    // MARK: - 회원가입 (이메일)
+    // MARK: - 회원가입 (번호)
 
     func showSignup() {
         let signup = SignupPhoneNumberCoordinator(navigationController)

@@ -51,6 +51,15 @@ final class SignupPhoneNumberCoordinator: BaseCoordinator<SignupPhoneNumberCoord
         let certify = CertifyCoordinator(phoneNumber: phoneNumber, navigationController)
         
         coordinate(to: certify)
+            .subscribe(onNext: { [weak self] in
+                switch $0 {
+                case .back:
+                    self?.finish.onNext(.back)
+                case .finish(let bool):
+                    break
+                }
+            })
+            .disposed(by: disposeBag)
     }
     
 }
