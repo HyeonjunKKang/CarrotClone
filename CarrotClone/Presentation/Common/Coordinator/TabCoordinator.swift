@@ -77,14 +77,14 @@ final class TabCoordinator: BaseCoordinator<TabCoordinatorResult> {
     
     private func showHome(_ root: UINavigationController) {
         let child = HomeCoordinator(root)
-//        coordinate(to: child)
-//            .subscribe(onNext: { [weak self] in
-//                switch $0 {
-//                case .finish:
-//                    self?.finish.onNext(.finish)
-//                }
-//            })
-//            .disposed(by: disposeBag)
+        coordinate(to: child)
+            .subscribe(onNext: { [weak self] in
+                switch $0 {
+                case .finish:
+                    self?.finish.onNext(.finish)
+                }
+            })
+            .disposed(by: disposeBag)
     }
     
     private func showChat(_ root: UINavigationController) {

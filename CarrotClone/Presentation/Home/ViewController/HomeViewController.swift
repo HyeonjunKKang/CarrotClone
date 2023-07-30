@@ -8,14 +8,15 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SnapKit
 
 final class HomeViewController: ViewController {
     
     // MARK: - Properties
-        
+    
     private let tableView = UITableView()
     let viewModel: HomeViewModel
-
+    
     // MARK: - Init
     
     init(viewModel: HomeViewModel) {
@@ -31,14 +32,39 @@ final class HomeViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
+
+    
     
     // MARK: - Binding
+    
     
     override func bind() {
         tableView.register(HomeViewCell.self, forCellReuseIdentifier: HomeViewCell.reuseIdentifier)
         tableView.rowHeight = 100
+        
+        //        viewModel.getCellData().bind(to: tableView.rx.items) { (tableView: UITableView, index: Int, element: String) -> UITableViewCell in
+        //            guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewCell.reuseIdentifier) as? HomeViewCell else { fatalError() }
+        //
+        //            cell.setUpData(element)
+        //            return cell
+        //        }
+        //        .disposed(by: disposeBag)
+        
+        let input = HomeViewModel.Input(viewDidLoad: rx.viewWillAppear.map { _ in })
+        let output = viewModel.transform(input: input)
+        
+        output.dummy.drive(tableView.rx.items) { (tableView: UITableView, index: Int, element: String) -> UITableViewCell in
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewCell.reuseIdentifier) as? HomeViewCell else { fatalError() }
+            
+            cell.setUpData(element)
+            return cell
+        }
+        .disposed(by: disposeBag)
     }
+        
+    
     
     override func layout() {
         view.addSubview(tableView)
@@ -46,16 +72,17 @@ final class HomeViewController: ViewController {
             $0.top.bottom.left.right.equalToSuperview()
         }
     }
-    
-    public func binding(_ viewModel: HomeViewModel) {
-        viewModel.getCellData().bind(to: tableView.rx.items) { (tableView: UITableView, index: Int, element: String) -> UITableViewCell in
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewCell.reuseIdentifier) as? HomeViewCell else { fatalError() }
-            
-            cell.setUpData(element)
-            return cell
-            
-        }
-        .disposed(by: disposeBag)
+
+}
+
+
+extension Reactive where Base: UIViewController{
+    var viewDidLoad: ControlEvent<Void> {
+        let source = self.methodInvoked(#selector(Base.viewDidLoad)).map { _ in }
+        return ControlEvent(events: source)
     }
-    
+    var viewWillAppear: ControlEvent<Bool> {
+            let source = self.methodInvoked(#selector(Base.viewWillAppear)).map { $0.first as? Bool ?? false }
+            return ControlEvent(events: source)
+        }
 }
