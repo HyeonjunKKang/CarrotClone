@@ -15,26 +15,26 @@ class HomeViewCell: UITableViewCell {
     
     static let reuseIdentifier = "HomeViewCell"
     
-    private let titleImage = UIImageView().then {
+    lazy var titleImage = UIImageView().then {
         $0.image = UIImage(named: "titleImage")
         $0.contentMode = .scaleAspectFit
         $0.layer.cornerRadius = 20
         $0.clipsToBounds = true
     }
     
-    private let titleLabel = UILabel().then {
+    lazy var titleLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 12, weight: .bold)
         $0.textColor = .black
         $0.text = "아이패드"
     }
     
-    private let subtitleLabel = UILabel().then {
+    lazy var subtitleLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 11)
         $0.textColor = .gray
         $0.text = "상현 2동"
     }
     
-    private let priceLabel = UILabel().then {
+    lazy var priceLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 12, weight: .bold)
         $0.textColor = .black
         $0.text = "3,000원"

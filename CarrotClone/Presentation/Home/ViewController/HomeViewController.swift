@@ -54,15 +54,24 @@ final class HomeViewController: ViewController {
         
         let input = HomeViewModel.Input(viewDidLoad: rx.viewWillAppear.map { _ in })
         let output = viewModel.transform(input: input)
+
+//        output.dummy.drive(tableView.rx.items) { (tableView: UITableView, index: Int, element: String) -> UITableViewCell in
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewCell.reuseIdentifier) as? HomeViewCell else { fatalError() }
+//
+//            cell.setUpData(element)
+//            return cell
         
-        output.dummy.drive(tableView.rx.items) { (tableView: UITableView, index: Int, element: String) -> UITableViewCell in
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewCell.reuseIdentifier) as? HomeViewCell else { fatalError() }
-            
-            cell.setUpData(element)
-            return cell
-        }
-        .disposed(by: disposeBag)
-    }
+        output.dummy
+            .drive(tableView.rx.items(cellIdentifier: HomeViewCell.reuseIdentifier, cellType: HomeViewCell.self)) { (_, element, cell) in
+                 cell.titleLabel.text = element.title
+                 cell.subtitleLabel.text = element.subtitle
+                 cell.priceLabel.text = element.price
+                 cell.titleImage.image = element.image
+             }
+             .disposed(by: disposeBag)
+     }
+        
+    
         
     
     

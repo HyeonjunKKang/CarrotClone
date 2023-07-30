@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C886E5F32A6BF2D8001B2D93 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C886E5F22A6BF2D7001B2D93 /* HomeViewCell.swift */; };
+		C8D25BB92A764DA100D590F6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D25BB82A764DA100D590F6 /* Item.swift */; };
 		FA63293D2A56E24E00B8BE01 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63293C2A56E24E00B8BE01 /* Keychain.swift */; };
 		FA63293F2A56E26300B8BE01 /* UserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63293E2A56E26300B8BE01 /* UserDataSource.swift */; };
 		FA6329412A56E26900B8BE01 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6329402A56E26900B8BE01 /* UserRepository.swift */; };
@@ -80,6 +81,7 @@
 
 /* Begin PBXFileReference section */
 		C886E5F22A6BF2D7001B2D93 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		C8D25BB82A764DA100D590F6 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		FA63293C2A56E24E00B8BE01 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		FA63293E2A56E26300B8BE01 /* UserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataSource.swift; sourceTree = "<group>"; };
 		FA6329402A56E26900B8BE01 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				FA6329442A56E27F00B8BE01 /* User.swift */,
+				C8D25BB82A764DA100D590F6 /* Item.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 			files = (
 				FAEEC0252A627A5E0016E2A1 /* SignupPhoneNumberViewModel.swift in Sources */,
 				FA6329452A56E27F00B8BE01 /* User.swift in Sources */,
+				C8D25BB92A764DA100D590F6 /* Item.swift in Sources */,
 				FA6329412A56E26900B8BE01 /* UserRepository.swift in Sources */,
 				FA6DE6E52A5ECCE800E80A0D /* ChatCoordinator.swift in Sources */,
 				FAEDB0112A559BA8004C4E5A /* ViewModel.swift in Sources */,
