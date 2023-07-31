@@ -36,6 +36,23 @@ struct TokenRepository: TokenRepositoryProtocol {
         }
     }
     
+    func save(uid: String) -> Observable<String> {
+        return Observable.create { emitter in
+            guard let data = try? JSONEncoder().encode(uid) else {
+                emitter.onError(TokenError.decode)
+                return Disposables.create()
+            }
+            
+            guard keychainManager?.save(key: .uid, data: data) ?? false || keychainManager?.update(key: .uid, data: data) ?? false else {
+                emitter.onError(TokenError.saveFail)
+                return Disposables.create()
+            }
+            
+            emitter.onNext(uid)
+            return Disposables.create()
+        }
+    }
+    
     func loadVerificationID() -> Observable<String> {
         return Observable.create { emitter in
             guard let data = keychainManager?.load(key: .verificationID),

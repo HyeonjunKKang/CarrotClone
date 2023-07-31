@@ -1,19 +1,19 @@
 //
-//  SignupPhoneNumberViewModel.swift
+//  LoginViewModel.swift
 //  CarrotClone
 //
-//  Created by 강현준 on 2023/07/15.
+//  Created by 강현준 on 2023/07/31.
 //
 
 import Foundation
 import RxSwift
 
-enum SignupPhoneNumberResult {
+enum LoginNavigaion {
     case back
     case send(String)
 }
 
-final class SignupPhoneNumberViewModel: ViewModel {
+final class LoginViewModel: ViewModel {
     struct Input {
         let backButtonTapped: Observable<Void>
         let sendAuthButtonTapped: Observable<Void>
@@ -25,7 +25,7 @@ final class SignupPhoneNumberViewModel: ViewModel {
     }
     
     var disposeBag = DisposeBag()
-    let navigation = PublishSubject<SignupPhoneNumberResult>()
+    let navigation = PublishSubject<LoginNavigaion>()
     
     func transform(input: Input) -> Output {
         input.backButtonTapped

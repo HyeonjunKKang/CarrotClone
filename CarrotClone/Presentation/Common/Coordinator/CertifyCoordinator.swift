@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 
 enum CertifyCoordinatorResult {
-    case finish(Bool)
+    case finish
     case back
 }
 
@@ -45,7 +45,7 @@ final class CertifyCoordinator: BaseCoordinator<CertifyCoordinatorResult> {
                 case .back:
                     self?.finish.onNext(.back)
                 case .finish:
-                    break
+                    self?.finish.onNext(.finish)
                 }
             })
             .disposed(by: disposeBag)

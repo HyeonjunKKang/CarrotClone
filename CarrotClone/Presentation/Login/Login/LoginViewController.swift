@@ -1,8 +1,8 @@
 //
-//  SignupPhoneNumberViewController.swift
+//  LoginViewController.swift
 //  CarrotClone
 //
-//  Created by 강현준 on 2023/07/15.
+//  Created by 강현준 on 2023/07/31.
 //
 
 import UIKit
@@ -10,13 +10,13 @@ import RxSwift
 import Then
 import SnapKit
 
-final class SignupPhoneNumberViewController: ViewController {
+final class LoginViewController: ViewController {
     
     // MARK: - Components
     
     private let wellcomeLabel = UILabel().then {
         $0.numberOfLines = 2
-        $0.text = "안녕하세요!\n휴대폰 번호로 가입해주세요."
+        $0.text = "안녕하세요!\n휴대폰 번호로 로그인해주세요."
         $0.font = .systemFont(ofSize: 24, weight: .bold)
         $0.backgroundColor = .white
         $0.textColor = .black
@@ -55,11 +55,11 @@ final class SignupPhoneNumberViewController: ViewController {
     
     // MARK: - Properties
     
-    let viewModel: SignupPhoneNumberViewModel
+    let viewModel: LoginViewModel
     
     // MARK: - Inits
     
-    init(viewModel: SignupPhoneNumberViewModel){
+    init(viewModel: LoginViewModel){
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -78,7 +78,7 @@ final class SignupPhoneNumberViewController: ViewController {
     
     // MARK: - Bind
     override func bind() {
-        let input = SignupPhoneNumberViewModel.Input(
+        let input = LoginViewModel.Input(
             backButtonTapped: backButton.rx.tap
                 .throttle(.seconds(1), scheduler: MainScheduler.asyncInstance),
             sendAuthButtonTapped: sendAuthMessageButton.rx.tap

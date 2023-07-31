@@ -1,5 +1,5 @@
 //
-//  SignupPhoneNumberCoordinator.swift
+//  SignupCoordinator.swift
 //  CarrotClone
 //
 //  Created by 강현준 on 2023/07/15.
@@ -8,17 +8,17 @@
 import Foundation
 import RxSwift
 
-enum SignupPhoneNumberCoordinatorResult {
-    case finish(Bool)
+enum SignupCoordinatorResult {
+    case finish
     case back
 }
 
-final class SignupPhoneNumberCoordinator: BaseCoordinator<SignupPhoneNumberCoordinatorResult> {
+final class SignupCoordinator: BaseCoordinator<SignupCoordinatorResult> {
     
-    let finish = PublishSubject<SignupPhoneNumberCoordinatorResult>()
+    let finish = PublishSubject<SignupCoordinatorResult>()
     
-    override func start() -> Observable<SignupPhoneNumberCoordinatorResult> {
-        showSignupPhoneNumber()
+    override func start() -> Observable<SignupCoordinatorResult> {
+        showSignup()
         setNavigationBarHidden(false, animated: true)
         return finish
             .do(onNext: { [weak self] in
@@ -29,8 +29,8 @@ final class SignupPhoneNumberCoordinator: BaseCoordinator<SignupPhoneNumberCoord
             })
     }
     
-    func showSignupPhoneNumber() {
-        guard let viewModel = DIContainer.shared.container.resolve(SignupPhoneNumberViewModel.self) else { return }
+    func showSignup() {
+        guard let viewModel = DIContainer.shared.container.resolve(SignupViewModel.self) else { return }
         
         viewModel.navigation
             .subscribe(onNext: { [weak self] in
@@ -43,7 +43,7 @@ final class SignupPhoneNumberCoordinator: BaseCoordinator<SignupPhoneNumberCoord
             })
             .disposed(by: disposeBag)
         
-        let viewController = SignupPhoneNumberViewController(viewModel: viewModel)
+        let viewController = SignupViewController(viewModel: viewModel)
         push(viewController, animated: true)
     }
     
@@ -55,8 +55,8 @@ final class SignupPhoneNumberCoordinator: BaseCoordinator<SignupPhoneNumberCoord
                 switch $0 {
                 case .back:
                     self?.finish.onNext(.back)
-                case .finish(let bool):
-                    break
+                case .finish:
+                    self?.finish.onNext(.finish)
                 }
             })
             .disposed(by: disposeBag)

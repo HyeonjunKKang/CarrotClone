@@ -9,6 +9,7 @@ import Foundation
 
 enum KeychainKey: String {
     case verificationID = "com.CarrotClone.verificationID"
+    case uid = "com.CarrotClone.uid"
     case fcmToken = "com.codershigh.CarrotClone.fcmToken"
     case authorization = "com.codershigh.boostcamp.Mogakco.authorization"
 }

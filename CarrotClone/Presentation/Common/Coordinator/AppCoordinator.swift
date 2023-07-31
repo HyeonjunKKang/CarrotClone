@@ -24,14 +24,13 @@ final class AppCoordinator: BaseCoordinator<Void> {
     
     override func start() -> Observable<Void> {
         setup(with: window)
-        showLogin()
-//        showTab()
+        showLoginMain()
         return Observable.never()
     }
     
-    private func showLogin() {
-        navigationController.setNavigationBarHidden(true, animated: true)
-        let login = LoginCoordinator(navigationController)
+    private func showLoginMain() {
+        self.setNavigationBarHidden(true, animated: false)
+        let login = LoginMainCoordinator(navigationController)
         coordinate(to: login)
             .subscribe(onNext: { [weak self] in
                 switch $0 {
@@ -45,18 +44,18 @@ final class AppCoordinator: BaseCoordinator<Void> {
     }
 
     private func showTab() {
-//        navigationController.setNavigationBarHidden(false, animated: true)
-//        let tab = TabCoordinator(navigationController)
-//        coordinate(to: tab)
-//            .subscribe(onNext: { [weak self] in
-//                switch $0 {
-//                case .finish:
-//                    break
-//                default:
-//                    break
-//                }
-//            })
-//            .disposed(by: disposeBag)
+        navigationController.setNavigationBarHidden(false, animated: true)
+        let tab = TabCoordinator(navigationController)
+        coordinate(to: tab)
+            .subscribe(onNext: { [weak self] in
+                switch $0 {
+                case .finish:
+                    break
+                default:
+                    break
+                }
+            })
+            .disposed(by: disposeBag)
 //
     }
 }

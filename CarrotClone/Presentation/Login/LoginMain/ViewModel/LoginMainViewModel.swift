@@ -30,11 +30,7 @@ final class LoginMainViewModel: ViewModel {
     var disposeBag = DisposeBag()
     
     func transform(input: Input) -> Output {
-        
-        let a = Observable.from([3, 2, 1, 5, 6])
-        let b = Observable.just(5)
-        
-        
+
         input.signupStartButtonTap
             .map { .signup }
             .bind(to: navigation)

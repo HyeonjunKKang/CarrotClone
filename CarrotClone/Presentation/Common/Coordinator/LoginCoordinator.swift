@@ -2,7 +2,7 @@
 //  LoginCoordinator.swift
 //  CarrotClone
 //
-//  Created by 강현준 on 2023/07/14.
+//  Created by 강현준 on 2023/07/31.
 //
 
 import Foundation
@@ -10,6 +10,7 @@ import RxSwift
 
 enum LoginCoordinatorResult {
     case finish
+    case back
 }
 
 final class LoginCoordinator: BaseCoordinator<LoginCoordinatorResult> {
@@ -18,46 +19,48 @@ final class LoginCoordinator: BaseCoordinator<LoginCoordinatorResult> {
     
     override func start() -> Observable<LoginCoordinatorResult> {
         showLogin()
-//        showSignup()
         return finish
+            .do(onNext: { [weak self] in
+                switch $0 {
+                case .finish: self?.pop(animated: false)
+                case .back: self?.pop(animated: true)
+                }
+            })
     }
     
     // MARK: - 로그인
-    
+
     func showLogin() {
-        guard let viewModel = DIContainer.shared.container.resolve(LoginMainViewModel.self) else { return }
+        guard let viewModel = DIContainer.shared.container.resolve(SignupViewModel.self) else { return }
         
         viewModel.navigation
             .subscribe(onNext: { [weak self] in
                 switch $0 {
-                case .signup:
-                    self?.showSignup()
-                case .login:
-                    break
-                case .autologin:
-                    self?.finish.onNext(.finish)
+                case .back:
+                    self?.finish.onNext(.back)
+                case .send(let number):
+                    self?.showCertify(phoneNumber: number)
                 }
             })
             .disposed(by: disposeBag)
-//
-        let viewController = LoginMainViewController(viewModel: viewModel)
-        push(viewController, animated: true, isRoot: true)
+        
+        let viewController = SignupViewController(viewModel: viewModel)
+        push(viewController, animated: true)
     }
     
-    // MARK: - 회원가입 (번호)
-
-    func showSignup() {
-        let signup = SignupPhoneNumberCoordinator(navigationController)
-
-        coordinate(to: signup)
+    func showCertify(phoneNumber: String) {
+        let certify = CertifyCoordinator(phoneNumber: phoneNumber, navigationController)
+        
+        coordinate(to: certify)
             .subscribe(onNext: { [weak self] in
                 switch $0 {
-                case .finish(let result):
-                    if result { self?.finish.onNext(.finish) }
                 case .back:
-                    break
+                    self?.finish.onNext(.back)
+                case .finish:
+                    self?.finish.onNext(.finish)
                 }
             })
             .disposed(by: disposeBag)
     }
 }
+

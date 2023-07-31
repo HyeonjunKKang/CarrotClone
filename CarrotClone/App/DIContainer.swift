@@ -71,15 +71,21 @@ final class DIContainer {
             return viewModel
         }
         
-        container.register(SignupPhoneNumberViewModel.self) { resolver in
-            let viewModel = SignupPhoneNumberViewModel()
+        container.register(LoginViewModel.self) { resolver in
+            let viewModel = LoginViewModel()
+            
+            return viewModel
+        }
+        
+        container.register(SignupViewModel.self) { resolver in
+            let viewModel = SignupViewModel()
             
             return viewModel
         }
         
         container.register(CertifyViewModel.self) { resolver in
             let viewModel = CertifyViewModel()
-            
+            viewModel.signinUseCase = resolver.resolve(SignInUseCaseProtocol.self)
             return viewModel
         }
     }

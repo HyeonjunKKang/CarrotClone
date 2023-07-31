@@ -26,6 +26,6 @@ struct SignInUseCase: SignInUseCaseProtocol {
     func auchCodeVerificationAndLogin(verificationCode: String) -> Observable<String> {
         return (tokenRepository?.loadVerificationID() ?? .empty())
             .flatMap { authRepository?.authCodeVerificationRequest(verificationCode: verificationCode, verificationID: $0) ?? .empty() }
-            
+            .flatMap { tokenRepository?.save(uid: $0) ?? .empty() }
     }
 }

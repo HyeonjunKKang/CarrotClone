@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import Then
 import SnapKit
+import RxKeyboard
 
 final class CertifyViewController: ViewController {
     
@@ -67,6 +68,10 @@ final class CertifyViewController: ViewController {
         $0.isEnabled = false
     }
     
+    let sentMessageAlertView = SentMessageAlertView().then {
+        $0.alpha = 0.0
+    }
+    
     // MARK: - Components
     
     let viewModel: CertifyViewModel
@@ -114,9 +119,13 @@ final class CertifyViewController: ViewController {
         
         bindcertifynumberInputTextField()
         bindCertifyAndStartButton()
+        bindSentMessageAlertView(input: output)
     }
     
     func bindcertifynumberInputTextField() {
+        
+        certifynumberInputTextField.becomeFirstResponder()
+        
         certifynumberInputTextField.rx.isFirstResponder
             .withUnretained(self)
             .subscribe(onNext: { vc, bool in
@@ -150,8 +159,38 @@ final class CertifyViewController: ViewController {
                 }
             })
             .disposed(by: disposeBag)
+    }
+    
+    func bindSentMessageAlertView(input: CertifyViewModel.Output){
         
+        RxKeyboard.instance.visibleHeight
+            .drive(onNext: { [weak self] keyboardHeight in
+                self?.sentMessageAlertView.snp.updateConstraints {
+                    $0.bottom.equalTo(self?.view ?? UIView()).offset(-keyboardHeight - 10)
+                }
+                self?.view.layoutIfNeeded()
+            })
+            .disposed(by: disposeBag)
         
+        input.sentMessageAlert
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                
+                let apperDuration: TimeInterval = 0
+                let disappearDuration: TimeInterval = 1.0
+                let delayBeforeDisappear: TimeInterval = 2.0
+                
+                UIView.animate(withDuration: apperDuration, animations: {
+                    self.sentMessageAlertView.alpha = 1.0
+                }) { _ in
+                    DispatchQueue.main.asyncAfter(deadline: .now() + delayBeforeDisappear) {
+                        UIView.animate(withDuration: disappearDuration) {
+                            self.sentMessageAlertView.alpha = 0.0
+                        }
+                    }
+                }
+            })
+            .disposed(by: disposeBag)
     }
     
     // MARK: - Layout
@@ -195,6 +234,14 @@ final class CertifyViewController: ViewController {
             $0.top.equalTo(dontShareLabel.snp.bottom).offset(7)
             $0.leading.trailing.equalTo(dontShareLabel)
             $0.height.equalTo(45)
+        }
+        
+        view.addSubview(sentMessageAlertView)
+        
+        sentMessageAlertView.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(10)
+            $0.bottom.equalToSuperview().inset(20)
+            $0.height.equalTo(40)
         }
     }
 }

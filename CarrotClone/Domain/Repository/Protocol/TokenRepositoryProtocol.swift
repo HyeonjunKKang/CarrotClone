@@ -9,5 +9,6 @@ import RxSwift
 
 protocol TokenRepositoryProtocol {
     func save(verificationID: String) -> Observable<String>
+    func save(uid: String) -> Observable<String>
     func loadVerificationID() -> Observable<String>
 }
