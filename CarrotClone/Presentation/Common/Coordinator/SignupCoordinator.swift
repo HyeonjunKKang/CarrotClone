@@ -57,9 +57,9 @@ final class SignupCoordinator: BaseCoordinator<SignupCoordinatorResult> {
                     self?.finish.onNext(.back)
                 case .finish:
                     self?.finish.onNext(.finish)
+                    
                 }
             })
             .disposed(by: disposeBag)
     }
-    
 }

@@ -45,13 +45,30 @@ final class CertifyCoordinator: BaseCoordinator<CertifyCoordinatorResult> {
                 case .back:
                     self?.finish.onNext(.back)
                 case .finish:
-                    self?.finish.onNext(.finish)
+                    self?.showEditProfile()
                 }
             })
             .disposed(by: disposeBag)
         
         let viewController = CertifyViewController(viewModel: viewModel)
 
+        push(viewController, animated: true)
+    }
+    
+    func showEditProfile() {
+        guard let viewModel = DIContainer.shared.container.resolve(EditProfileViewModel.self) else { return }
+        viewModel.type.onNext(.new)
+        
+        viewModel.navigation
+            .subscribe(onNext: { [weak self] in
+                switch $0 {
+                case .finish:
+                    self?.finish.onNext(.finish)
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        let viewController = EditProfileViewController(viewModel: viewModel)
         push(viewController, animated: true)
     }
 }

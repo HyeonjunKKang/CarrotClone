@@ -31,7 +31,7 @@ final class LoginCoordinator: BaseCoordinator<LoginCoordinatorResult> {
     // MARK: - 로그인
 
     func showLogin() {
-        guard let viewModel = DIContainer.shared.container.resolve(SignupViewModel.self) else { return }
+        guard let viewModel = DIContainer.shared.container.resolve(LoginViewModel.self) else { return }
         
         viewModel.navigation
             .subscribe(onNext: { [weak self] in
@@ -44,14 +44,16 @@ final class LoginCoordinator: BaseCoordinator<LoginCoordinatorResult> {
             })
             .disposed(by: disposeBag)
         
-        let viewController = SignupViewController(viewModel: viewModel)
+        let viewController = LoginViewController(viewModel: viewModel)
         push(viewController, animated: true)
     }
     
     func showCertify(phoneNumber: String) {
-        let certify = CertifyCoordinator(phoneNumber: phoneNumber, navigationController)
+        guard let viewModel = DIContainer.shared.container.resolve(CertifyViewModel.self) else { return }
         
-        coordinate(to: certify)
+        viewModel.inputPhonenumber.onNext(phoneNumber)
+        
+        viewModel.navigation
             .subscribe(onNext: { [weak self] in
                 switch $0 {
                 case .back:
@@ -61,6 +63,9 @@ final class LoginCoordinator: BaseCoordinator<LoginCoordinatorResult> {
                 }
             })
             .disposed(by: disposeBag)
+        
+        let viewController = CertifyViewController(viewModel: viewModel)
+        push(viewController, animated: true)
     }
 }
 

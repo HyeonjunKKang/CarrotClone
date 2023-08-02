@@ -57,7 +57,9 @@ final class EditProfileViewModel: ViewModel {
 //            .filter { $0 == .edit }
 //            .withUnretained(self)
 ////            .flatMap
-        ///
+
+        // TODO: - 프로필 기존에 있으면 데이터 불러오기
+        
         let photoSelectAlertObserver = PublishSubject<Void>()
         
         input.imageViewButtonTapped

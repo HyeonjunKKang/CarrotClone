@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+struct UserRequestDTO: Encodable {
+    let uid: String
+    let profileImageURLString: String?
+    let email: String
+    let name: String
+    
+    func toResponse() -> UserResponseDTO {
+        return UserResponseDTO(
+            uid: uid,
+            profileImageURLString: profileImageURLString,
+            email: email,
+            name: name)
+    }
+}

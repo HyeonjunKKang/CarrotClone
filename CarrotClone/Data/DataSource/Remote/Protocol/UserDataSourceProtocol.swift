@@ -6,3 +6,11 @@
 //
 
 import Foundation
+import RxSwift
+
+protocol UserDataSourceProtocol {
+    func read(uid: String) -> Observable<UserResponseDTO>
+    func exitsUserData(uid: String) -> Observable<Bool>
+    func edit(request: UserRequestDTO) -> Observable<UserResponseDTO> 
+    func uploadProfileImage(id: String, imageData: Data) -> Observable<URL>
+}
