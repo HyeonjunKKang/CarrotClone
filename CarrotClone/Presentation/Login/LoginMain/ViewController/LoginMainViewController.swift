@@ -74,8 +74,6 @@ final class LoginMainViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
     // MARK: - Bind

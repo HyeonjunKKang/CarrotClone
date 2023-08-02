@@ -46,13 +46,12 @@ struct AuthDataSource: AuthDataSourceProtocol {
                 if let error = error {
                     print("DEBUG: \(error.localizedDescription)")
                     print("LogIn Failed...")
-                    emitter.onError(error)
+                } else {
+                    print("DEBUG: Login Success!! UID IS \(String(describing: authResult?.user.uid))")
+                    
+                    guard let uid = authResult?.user.uid else { return }
+                    emitter.onNext(uid)
                 }
-                
-                print("DEBUG: Login Success!! UID IS \(String(describing: authResult?.user.uid))")
-                
-                guard let uid = authResult?.user.uid else { return }
-                emitter.onNext(uid)
             }
             return Disposables.create()
         }

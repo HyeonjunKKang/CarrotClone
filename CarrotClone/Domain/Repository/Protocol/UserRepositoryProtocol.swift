@@ -6,3 +6,13 @@
 //
 
 import Foundation
+import RxSwift
+
+protocol UserRepositoryProtocol {
+    func load() -> Observable<User>
+    func read(uid: String) -> Observable<User>
+    func exits(uid: String) -> Observable<Bool>
+    func edit(user: User, imageData: Data) -> Observable<User>
+    func edit(user: User) -> Observable<Void>
+    func exitsAndCreate() -> Observable<Void>
+}

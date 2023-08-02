@@ -66,7 +66,11 @@ final class CertifyViewModel: ViewModel {
             .disposed(by: disposeBag)
 
         // 인증문자 요청부분
-        inputPhonenumber
+        Observable.merge(
+            inputPhonenumber.map { _ in () },
+            input.resendButtonTapped
+        )
+            .withLatestFrom(inputPhonenumber)
             .withUnretained(self)
             .flatMap { $0.0.signinUseCase?.requestSingIn(phonenumber: $0.1) ?? .empty() }
             .map { _ in () }
@@ -81,15 +85,13 @@ final class CertifyViewModel: ViewModel {
             .map { _ in CertifyNavigation.finish }
             .bind(to: navigation)
             .disposed(by: disposeBag)
-
-        input.resendButtonTapped
-            .subscribe(onNext: { [weak self] in
+        
+        sentMessageAlert
+            .subscribe(onNext: { [weak self] _ in
                 self?.stopTimer()
                 self?.startTimer()
             })
             .disposed(by: disposeBag)
-        
-        startTimer()
         
         return Output(
             inputPhonenumber: outputPhonenumber.asDriver(onErrorJustReturn: ""),

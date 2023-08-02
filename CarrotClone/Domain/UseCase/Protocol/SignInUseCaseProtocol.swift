@@ -9,5 +9,5 @@ import RxSwift
 
 protocol SignInUseCaseProtocol {
     func requestSingIn(phonenumber: String) -> Observable<String>
-    func auchCodeVerificationAndLogin(verificationCode: String) -> Observable<String> 
+    func auchCodeVerificationAndLogin(verificationCode: String) -> Observable<Void> 
 }

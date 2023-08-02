@@ -26,6 +26,7 @@ final class DIContainer {
     }
     
     private func registerDataSources() {
+        container.register(UserDataSourceProtocol.self) { _ in UserDataSource() }
         container.register(AuthDataSourceProtocol.self) { _ in AuthDataSource() }
         container.register(KeychainProtocol.self) { _ in
             Keychain()
@@ -52,6 +53,14 @@ final class DIContainer {
             
             return repository
         }
+        
+        container.register(UserRepositoryProtocol.self) { resolver in
+            var repository = UserRepository()
+            repository.keyChainManager = resolver.resolve(KeychainManagerProtocol.self)
+            repository.userDataSource = resolver.resolve(UserDataSourceProtocol.self)
+            
+            return repository
+        }
     }
     
     private func registerUseCases() {
@@ -59,6 +68,13 @@ final class DIContainer {
             var useCase = SignInUseCase()
             useCase.authRepository = resolver.resolve(AuthRepositoryProtocol.self)
             useCase.tokenRepository = resolver.resolve(TokenRepositoryProtocol.self)
+            useCase.userRepository = resolver.resolve(UserRepositoryProtocol.self)
+            return useCase
+        }
+        
+        container.register(EditProfileUseCaseProtocol.self) { resolver in
+            var useCase = EditProfileUseCase()
+            useCase.userRepository = resolver.resolve(UserRepositoryProtocol.self)
             
             return useCase
         }
@@ -86,6 +102,13 @@ final class DIContainer {
         container.register(CertifyViewModel.self) { resolver in
             let viewModel = CertifyViewModel()
             viewModel.signinUseCase = resolver.resolve(SignInUseCaseProtocol.self)
+            return viewModel
+        }
+        
+        container.register(EditProfileViewModel.self) { resolver in
+            let viewModel = EditProfileViewModel()
+            viewModel.editProfileUseCase = resolver.resolve(EditProfileUseCaseProtocol.self)
+            
             return viewModel
         }
     }

@@ -16,7 +16,9 @@ struct AuthRepository: AuthRepositoryProtocol{
         return authDataSource?.phoneNumberAuthenticationRequest(phoneNumber: phonenumber) ?? .empty()
     }
     
+    /// 인증번호 확인 요청(휴대전화 로그인), uid 리턴
     func authCodeVerificationRequest(verificationCode: String, verificationID: String) -> Observable<String> {
         return authDataSource?.authCodeVerificationRequest(verificationCode: verificationCode, verificationID: verificationID) ?? .empty()
+            
     }
 }
