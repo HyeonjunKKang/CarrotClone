@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SnapKit
+import Then
 
 final class HomeViewController: ViewController {
     
@@ -16,6 +17,17 @@ final class HomeViewController: ViewController {
     
     private let tableView = UITableView()
     let viewModel: HomeViewModel
+    
+    private let writeButton = UIButton().then {
+        $0.backgroundColor = .orange
+        $0.setTitle("+ 글쓰기", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+        $0.layer.cornerRadius = 23
+        $0.layer.masksToBounds = false
+        $0.layer.shadowRadius = 3
+        $0.layer.shadowOpacity = 0.05
+    }
 
     
     // MARK: - Init
@@ -136,14 +148,24 @@ final class HomeViewController: ViewController {
      }
         
     override func layout() {
-        view.addSubview(tableView)
+        
+        [tableView, writeButton]
+            .forEach { view.addSubview($0) }
+
         tableView.snp.makeConstraints {
             $0.top.bottom.left.right.equalToSuperview()
+        }
+        
+        writeButton.snp.makeConstraints {
+            $0.trailing.equalToSuperview().offset(-10)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-10)
+            $0.size.equalTo(CGSize(width: 99, height: 46))
         }
     }
 
 }
 
+// MARK: - Extension
 
 extension Reactive where Base: UIViewController{
     var viewDidLoad: ControlEvent<Void> {
