@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import UIKit
 
 enum HomeCoordinatorResult {
     case finish
@@ -39,7 +40,16 @@ final class HomeCoordinator: BaseCoordinator<HomeCoordinatorResult> {
 //
 //        let viewController = LoginViewController(viewModel: viewModel)
         
+        navigationController.isNavigationBarHidden = false
+        setNavigationBarHidden(false, animated: true)
+        
         let viewController = HomeViewController(viewModel: HomeViewModel())
         push(viewController, animated: true, isRoot: true)
+    }
+    
+    func setNavigationBarButtons(left: UIBarButtonItem?, right: [UIBarButtonItem]) {
+        // 네비게이션 바 버튼 설정
+        self.navigationController.topViewController?.navigationItem.leftBarButtonItem = left
+        self.navigationController.topViewController?.navigationItem.rightBarButtonItems = right
     }
 }
