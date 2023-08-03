@@ -46,14 +46,15 @@ class HomeViewCell: UITableViewCell {
         $0.text = "13초 전"
     }
     
-    lazy var secondLineStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [subtitleLabel, dotLabel, timeLabel])
-        stackView.axis = .horizontal
-        stackView.spacing = 3
-        stackView.alignment = .leading
-        stackView.distribution = .fillProportionally
-        return stackView
-    }()
+    lazy var secondLineStackView: UIStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.spacing = 2
+        $0.alignment = .leading
+        $0.distribution = .fillProportionally
+        $0.addArrangedSubview(subtitleLabel)
+        $0.addArrangedSubview(dotLabel)
+        $0.addArrangedSubview(timeLabel)
+    }
 
     
     lazy var priceLabel = UILabel().then {
@@ -62,6 +63,30 @@ class HomeViewCell: UITableViewCell {
         $0.text = "3,000원"
     }
     
+    lazy var heartImageView: UIImageView = UIImageView().then {
+        $0.image = UIImage(systemName: "heart")
+        $0.tintColor = .gray
+        $0.contentMode = .scaleAspectFit
+        $0.snp.makeConstraints {
+            $0.width.equalTo(15)
+            $0.height.equalTo(15)
+        }
+    }
+    
+    lazy var heartLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 11, weight: .bold)
+        $0.textColor = .darkGray
+        $0.text = "2"
+    }
+    
+    lazy var heartStackView: UIStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.spacing = 3
+        $0.alignment = .center
+        $0.distribution = .fillEqually
+        $0.addArrangedSubview(heartImageView)
+        $0.addArrangedSubview(heartLabel)
+    }
     
     // MARK: - LifeCycle
 
@@ -89,7 +114,7 @@ class HomeViewCell: UITableViewCell {
     
     func setUpLayout() {
         
-        [titleImage, titleLabel, secondLineStackView, priceLabel]
+        [titleImage, titleLabel, secondLineStackView, priceLabel, heartStackView]
             .forEach { self.addSubview($0) }
         
         titleImage.snp.makeConstraints {
@@ -113,6 +138,11 @@ class HomeViewCell: UITableViewCell {
         priceLabel.snp.makeConstraints {
             $0.top.equalTo(secondLineStackView.snp.bottom).offset(7)
             $0.leading.equalTo(secondLineStackView.snp.leading)
+        }
+        
+        heartStackView.snp.makeConstraints {
+            $0.trailing.equalToSuperview().offset(-5)
+            $0.bottom.equalToSuperview().offset(-10)
         }
         
     }
