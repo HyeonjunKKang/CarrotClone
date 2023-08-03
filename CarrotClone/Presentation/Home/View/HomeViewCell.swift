@@ -34,11 +34,34 @@ class HomeViewCell: UITableViewCell {
         $0.text = "상현 2동"
     }
     
+    lazy var dotLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 11, weight: .bold)
+        $0.textColor = .gray
+        $0.text = "・"
+    }
+    
+    lazy var timeLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 11)
+        $0.textColor = .gray
+        $0.text = "13초 전"
+    }
+    
+    lazy var secondLineStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [subtitleLabel, dotLabel, timeLabel])
+        stackView.axis = .horizontal
+        stackView.spacing = 3
+        stackView.alignment = .leading
+        stackView.distribution = .fillProportionally
+        return stackView
+    }()
+
+    
     lazy var priceLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 12, weight: .bold)
         $0.textColor = .black
         $0.text = "3,000원"
     }
+    
     
     // MARK: - LifeCycle
 
@@ -66,7 +89,7 @@ class HomeViewCell: UITableViewCell {
     
     func setUpLayout() {
         
-        [titleImage, titleLabel, subtitleLabel, priceLabel]
+        [titleImage, titleLabel, secondLineStackView, priceLabel]
             .forEach { self.addSubview($0) }
         
         titleImage.snp.makeConstraints {
@@ -82,14 +105,14 @@ class HomeViewCell: UITableViewCell {
             $0.leading.equalTo(titleImage.snp.trailing).offset(7)
         }
         
-        subtitleLabel.snp.makeConstraints {
+        secondLineStackView.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(7)
             $0.leading.equalTo(titleLabel.snp.leading)
         }
         
         priceLabel.snp.makeConstraints {
-            $0.top.equalTo(subtitleLabel.snp.bottom).offset(7)
-            $0.leading.equalTo(subtitleLabel.snp.leading)
+            $0.top.equalTo(secondLineStackView.snp.bottom).offset(7)
+            $0.leading.equalTo(secondLineStackView.snp.leading)
         }
         
     }
