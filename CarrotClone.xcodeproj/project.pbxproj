@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C80099EE2A7BAB8900DF2DDF /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80099ED2A7BAB8900DF2DDF /* BoardViewController.swift */; };
+		C80099F02A7BAD6700DF2DDF /* BoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80099EF2A7BAD6700DF2DDF /* BoardViewModel.swift */; };
+		C80099F22A7BAFDA00DF2DDF /* BoardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80099F12A7BAFDA00DF2DDF /* BoardCoordinator.swift */; };
 		C886E5F32A6BF2D8001B2D93 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C886E5F22A6BF2D7001B2D93 /* HomeViewCell.swift */; };
 		C8D25BB92A764DA100D590F6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D25BB82A764DA100D590F6 /* Item.swift */; };
 		FA63293D2A56E24E00B8BE01 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63293C2A56E24E00B8BE01 /* Keychain.swift */; };
@@ -80,6 +83,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C80099ED2A7BAB8900DF2DDF /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
+		C80099EF2A7BAD6700DF2DDF /* BoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewModel.swift; sourceTree = "<group>"; };
+		C80099F12A7BAFDA00DF2DDF /* BoardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCoordinator.swift; sourceTree = "<group>"; };
 		C886E5F22A6BF2D7001B2D93 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		C8D25BB82A764DA100D590F6 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		FA63293C2A56E24E00B8BE01 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
@@ -320,6 +326,7 @@
 				FA6DE6E22A5ECCE000E80A0D /* HomeCoordinator.swift */,
 				FA6DE6E42A5ECCE800E80A0D /* ChatCoordinator.swift */,
 				FA6DE6E62A5ECCFE00E80A0D /* MyCarrotCoordinator.swift */,
+				C80099F12A7BAFDA00DF2DDF /* BoardCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -372,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				FA63294E2A56E95A00B8BE01 /* HomeViewController.swift */,
+				C80099ED2A7BAB8900DF2DDF /* BoardViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -380,6 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				FA6329502A56E96100B8BE01 /* HomeViewModel.swift */,
+				C80099EF2A7BAD6700DF2DDF /* BoardViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -681,6 +690,7 @@
 				FA6DE6EA2A5ECE2900E80A0D /* ChatListViewController.swift in Sources */,
 				FAEDB0152A559C34004C4E5A /* ViewController.swift in Sources */,
 				FAEDB0192A559CF2004C4E5A /* AppCoordinator.swift in Sources */,
+				C80099F02A7BAD6700DF2DDF /* BoardViewModel.swift in Sources */,
 				FA6DE6E12A5ECB0400E80A0D /* TabCoordinator.swift in Sources */,
 				C886E5F32A6BF2D8001B2D93 /* HomeViewCell.swift in Sources */,
 				FA6329472A56E28600B8BE01 /* UserUseCase.swift in Sources */,
@@ -692,7 +702,9 @@
 				FAEEC01B2A616BED0016E2A1 /* UIColor+CarrotColor.swift in Sources */,
 				FA63293D2A56E24E00B8BE01 /* Keychain.swift in Sources */,
 				FA63294F2A56E95A00B8BE01 /* HomeViewController.swift in Sources */,
+				C80099F22A7BAFDA00DF2DDF /* BoardCoordinator.swift in Sources */,
 				FA6329432A56E27900B8BE01 /* UserRepositoryProtocol.swift in Sources */,
+				C80099EE2A7BAB8900DF2DDF /* BoardViewController.swift in Sources */,
 				FA6DE6FD2A61621700E80A0D /* LoginMainViewController.swift in Sources */,
 				FA6DE6ED2A5ECE5600E80A0D /* MyCarrotViewController.swift in Sources */,
 				FAEEC0282A6292740016E2A1 /* UITextField + Rx.swift in Sources */,

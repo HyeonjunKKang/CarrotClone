@@ -53,13 +53,13 @@ final class HomeViewController: ViewController {
     }
 
     
-    // MARK: - functions
+    // MARK: - Functions
     
-    func chevronButtonTapped() {
+    private func chevronButtonTapped() {
         print("동네 선택 팝업")
     }
 
-    func setLeftButton() {
+    private func setLeftButton() {
         let titleLabel = UILabel()
         titleLabel.text = "상현 2동"
         titleLabel.font = UIFont.systemFont(ofSize: 17.0, weight: .bold)
@@ -76,7 +76,7 @@ final class HomeViewController: ViewController {
         let titleView = UIView()
         titleView.addSubview(titleStackView)
         titleStackView.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(16)
+            $0.leading.equalToSuperview().offset(-36)
             $0.centerY.equalToSuperview()
         }
         
@@ -88,7 +88,7 @@ final class HomeViewController: ViewController {
     }
 
 
-    func setRightButtons() {
+    private func setRightButtons() {
         let listButton = createBarButton(imageName: "line.3.horizontal") {
             print("리스트 버튼")
         }
@@ -145,8 +145,24 @@ final class HomeViewController: ViewController {
                  cell.titleImage.image = element.image
              }
              .disposed(by: disposeBag)
+        
+        // ⭐️ 추후 커스텀뷰에서 넘기는 것으로 변경
+        writeButton.rx.tap
+            .bind { [weak self] in
+                guard let self = self else { return }
+                let boardViewModel = BoardViewModel()
+                let boardViewController = BoardViewController()
+//                boardViewController.bind(viewModel: boardViewModel)
+                self.navigationController?.pushViewController(boardViewController, animated: true)
+            }
+            .disposed(by: disposeBag)
+
+        
      }
         
+    
+    // MARK: - Layout
+
     override func layout() {
         
         [tableView, writeButton]
