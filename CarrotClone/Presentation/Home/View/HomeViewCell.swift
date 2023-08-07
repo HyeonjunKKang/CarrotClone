@@ -46,7 +46,7 @@ class HomeViewCell: UITableViewCell {
         $0.text = "13초 전"
     }
     
-    lazy var secondLineStackView: UIStackView = UIStackView().then {
+    lazy var secondLineStackView = UIStackView().then {
         $0.axis = .horizontal
         $0.spacing = 2
         $0.alignment = .leading
@@ -63,7 +63,7 @@ class HomeViewCell: UITableViewCell {
         $0.text = "3,000원"
     }
     
-    lazy var heartImageView: UIImageView = UIImageView().then {
+    lazy var heartImageView = UIImageView().then {
         $0.image = UIImage(systemName: "heart")
         $0.tintColor = .gray
         $0.contentMode = .scaleAspectFit
