@@ -120,9 +120,9 @@ final class BoardViewController: ViewController {
     
     lazy var placeStackView = UIStackView().then {
         $0.axis = .horizontal
-//        $0.spacing = 4
-        $0.alignment = .leading
-        $0.distribution = .fillProportionally
+        $0.spacing = 40
+        $0.alignment = .fill
+        $0.distribution = .fill
         $0.addArrangedSubview(placeLabel)
         $0.addArrangedSubview(placeDeleteButton)
     }
@@ -147,15 +147,7 @@ final class BoardViewController: ViewController {
         $0.setImage(UIImage(systemName: "chevron.right"), for: .normal)
         $0.tintColor = UIColor.black
     }
-    
-    lazy var buttonInsideStackView = UIStackView().then {
-        $0.axis = .horizontal
-        $0.spacing = 20
-        $0.alignment = .leading
-        $0.distribution = .fillProportionally
-        $0.addArrangedSubview(placeButtonLabel)
-        $0.addArrangedSubview(placeInsideButton)
-    }
+
     
     /// --- 5. 작성 완료
     lazy var completeButton = UIButton().then {
@@ -200,9 +192,8 @@ final class BoardViewController: ViewController {
         
         [contentView, titleLabel, titleTextField, priceLabel, priceTextField, explainLabel, explainTextView, placeStackView, placeButton, completeButton]
             .forEach { scrollView.addSubview($0) }
-        
-        placeButton.addSubview(buttonInsideStackView)
-        
+    
+                
         scrollView.snp.makeConstraints {
             $0.top.bottom.equalTo(view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview()
@@ -215,7 +206,7 @@ final class BoardViewController: ViewController {
         }
         
         titleLabel.snp.makeConstraints {
-            $0.top.equalTo(scrollView).offset(100)
+            $0.top.equalTo(scrollView).offset(30)
             $0.leading.equalTo(scrollView).offset(20)
             $0.trailing.equalTo(scrollView).offset(-20)
         }
@@ -253,9 +244,8 @@ final class BoardViewController: ViewController {
             $0.height.equalTo(150)
         }
         
-        // 거래 희망 장소 , 삭제 스택뷰
         placeStackView.snp.makeConstraints {
-            $0.top.equalTo(explainTextView.snp.bottom).offset(10)
+            $0.top.equalTo(explainTextView.snp.bottom).offset(20)
             $0.leading.equalTo(explainTextView)
             $0.trailing.equalTo(explainTextView)
         }
@@ -265,12 +255,20 @@ final class BoardViewController: ViewController {
             $0.top.equalTo(placeStackView.snp.bottom).offset(10)
             $0.leading.equalTo(placeStackView)
             $0.trailing.equalTo(explainTextView)
-            $0.height.equalTo(40)
+            $0.height.equalTo(50)
         }
         
-        buttonInsideStackView.snp.makeConstraints {
-            $0.centerX.equalTo(placeButton)
+        placeButton.addSubview(placeButtonLabel)
+        placeButton.addSubview(placeInsideButton)
+        
+        placeButtonLabel.snp.makeConstraints {
             $0.centerY.equalTo(placeButton)
+            $0.leading.equalTo(placeButton).offset(10)
+        }
+        
+        placeInsideButton.snp.makeConstraints {
+            $0.centerY.equalTo(placeButton)
+            $0.trailing.equalTo(placeButton).offset(-10)
         }
         
         completeButton.snp.makeConstraints {
