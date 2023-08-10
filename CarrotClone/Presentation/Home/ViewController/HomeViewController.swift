@@ -13,6 +13,7 @@ import Then
 
 final class HomeViewController: ViewController {
     
+    
     // MARK: - Properties
     
     private let tableView = UITableView()
@@ -60,6 +61,8 @@ final class HomeViewController: ViewController {
     }
 
     private func setLeftButton() {
+        navigationItem.leftBarButtonItem = nil
+    
         let titleLabel = UILabel()
         titleLabel.text = "상현 2동"
         titleLabel.font = UIFont.systemFont(ofSize: 17.0, weight: .bold)
@@ -76,7 +79,7 @@ final class HomeViewController: ViewController {
         let titleView = UIView()
         titleView.addSubview(titleStackView)
         titleStackView.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(-36)
+            $0.leading.equalToSuperview()
             $0.centerY.equalToSuperview()
         }
         
@@ -139,10 +142,12 @@ final class HomeViewController: ViewController {
         
         output.dummy
             .drive(tableView.rx.items(cellIdentifier: HomeViewCell.reuseIdentifier, cellType: HomeViewCell.self)) { (_, element, cell) in
-                 cell.titleLabel.text = element.title
-                 cell.subtitleLabel.text = element.subtitle
-                 cell.priceLabel.text = element.price
-                 cell.titleImage.image = element.image
+//                cell.titleImage.image = element.postImage
+//                cell.titleLabel.text = element.title
+//                cell.subtitleLabel.text = element.place
+//                cell.timeLabel.text = "\(element.postTime)초 전"
+//                cell.priceLabel.text = element.price
+//                cell.heartLabel.text = element.heart
              }
              .disposed(by: disposeBag)
         

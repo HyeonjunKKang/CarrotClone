@@ -45,9 +45,10 @@ class HomeViewModel: ViewModel {
     private func updateData() {
         
         // dummy data
-        let item1 = ItemModel(title: "아이폰", subtitle: "상현2동", price: "100만원", image: UIImage(named: "titleImage")!)
-        let item2 = ItemModel(title: "맥북", subtitle: "성복동", price: "200만원", image: UIImage(named: "titleImage")!)
-        let item3 = ItemModel(title: "아이패드", subtitle: "성복동", price: "150만원", image: UIImage(named: "titleImage")!)
+        let item1 = ItemModel(title: "아이폰", place: "상현2동", postTime: 1, price: 10000, postImage: UIImage(named: "titleImage")!, heart: 2)
+        let item2 = ItemModel(title: "아이패드", place: "성복동", postTime: 15, price: 20000, postImage: UIImage(named: "titleImage")!, heart: 3)
+        let item3 = ItemModel(title: "애플워치", place: "풍덕천동", postTime: 20, price: 2000, postImage: UIImage(named: "titleImage")!, heart: 1)
+        
 
         itemModels = [item1, item2, item3]
 

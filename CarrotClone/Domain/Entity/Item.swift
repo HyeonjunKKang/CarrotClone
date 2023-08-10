@@ -11,8 +11,10 @@ import UIKit
 
 struct ItemModel {
     let title: String
-    let subtitle: String
-    let price: String
-    let image: UIImage
+    let place: String
+    let postTime: Int
+    let price: Int
+    let postImage: UIImage
+    let heart: Int
 }
 

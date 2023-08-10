@@ -11,7 +11,7 @@ import RxCocoa
 import SnapKit
 import Then
 
-final class BoardViewController: ViewController {
+final class BoardViewController: ViewController, UIScrollViewDelegate {
     
     // MARK: - Properties
     
@@ -23,7 +23,6 @@ final class BoardViewController: ViewController {
     
     private let contentView = UIView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.backgroundColor = .purple
     }
     
     /// --- 1. 제목
@@ -168,6 +167,7 @@ final class BoardViewController: ViewController {
         super.viewDidLoad()
         
         setUpUIConstraints()
+        scrollView.delegate = self
         navigationItem.title = "내 물건 팔기"
     }
     
@@ -189,20 +189,21 @@ final class BoardViewController: ViewController {
     override func layout() {
         
         view.addSubview(scrollView)
+        view.addSubview(completeButton) // 뷰에추가, 스크롤뷰x
+        scrollView.addSubview(contentView)
         
-        [contentView, titleLabel, titleTextField, priceLabel, priceTextField, explainLabel, explainTextView, placeStackView, placeButton, completeButton]
-            .forEach { scrollView.addSubview($0) }
+        [titleLabel, titleTextField, priceLabel, priceTextField, explainLabel, explainTextView, placeStackView, placeButton]
+            .forEach { contentView.addSubview($0) }
     
                 
         scrollView.snp.makeConstraints {
-            $0.top.bottom.equalTo(view.safeAreaLayoutGuide)
-            $0.leading.trailing.equalToSuperview()
+            $0.top.bottom.leading.trailing.equalTo(view.safeAreaLayoutGuide)
         }
         
         contentView.snp.makeConstraints {
-            $0.leading.trailing.equalTo(scrollView)
-            $0.top.equalTo(scrollView).offset(10)
-            $0.bottom.equalTo(scrollView).offset(-10)
+            $0.top.bottom.leading.trailing.equalTo(scrollView)
+            $0.width.equalTo(scrollView)
+            $0.height.equalToSuperview()
         }
         
         titleLabel.snp.makeConstraints {
