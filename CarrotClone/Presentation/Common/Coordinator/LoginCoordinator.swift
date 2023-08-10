@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import MapKit
 
 enum LoginCoordinatorResult {
     case finish
@@ -19,6 +20,7 @@ final class LoginCoordinator: BaseCoordinator<LoginCoordinatorResult> {
     
     override func start() -> Observable<LoginCoordinatorResult> {
         showLogin()
+        setNavigationBarHidden(false, animated: true)
         return finish
             .do(onNext: { [weak self] in
                 switch $0 {

@@ -20,6 +20,7 @@ final class LoginMainViewModel: ViewModel {
     struct Input {
         let signupStartButtonTap: Observable<Void>
         let loginButtonTap: Observable<Void>
+        let viewDidLoad: Observable<Void>
     }
     
     struct Output {
@@ -27,6 +28,7 @@ final class LoginMainViewModel: ViewModel {
     }
     
     let navigation = PublishSubject<LoginMainNavigation>()
+    var autologinUsecase: AutoLoginUseCaseProtocol?
     var disposeBag = DisposeBag()
     
     func transform(input: Input) -> Output {
@@ -41,6 +43,14 @@ final class LoginMainViewModel: ViewModel {
             .bind(to: navigation)
             .disposed(by: disposeBag)
         
+        input.viewDidLoad
+            .withUnretained(self)
+            .flatMap { $0.0.autologinUsecase?.load() ?? .empty()}
+            .compactMap { $0 }
+            .filter { $0.count >= 5 }
+            .map { _ in .autologin }
+            .bind(to: navigation)
+            .disposed(by: disposeBag)
         
         return Output()
     }

@@ -83,7 +83,8 @@ final class LoginMainViewController: ViewController {
             signupStartButtonTap: signupStartButton.rx.tap
                 .throttle(.seconds(1), scheduler: MainScheduler.asyncInstance),
             loginButtonTap: loginButton.rx.tap
-                .throttle(.seconds(1), scheduler: MainScheduler.asyncInstance)
+                .throttle(.seconds(1), scheduler: MainScheduler.asyncInstance),
+            viewDidLoad: rx.viewWillAppear.map { _ in }.take(1)
         )
         
         let output = viewModel.transform(input: input)

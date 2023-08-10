@@ -55,6 +55,8 @@
 		FA8846F42A77D99700051287 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FA8846F32A77D99700051287 /* FirebaseFirestore */; };
 		FA8846F62A77D99700051287 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = FA8846F52A77D99700051287 /* FirebaseMessaging */; };
 		FA8846F82A77D99700051287 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FA8846F72A77D99700051287 /* FirebaseStorage */; };
+		FAA0950C2A8217D400507CD3 /* AutoLoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0950B2A8217D400507CD3 /* AutoLoginUseCase.swift */; };
+		FAA0950E2A821A6C00507CD3 /* AutoLoginUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0950D2A821A6C00507CD3 /* AutoLoginUseCaseProtocol.swift */; };
 		FACE340A2A78E84F00DFD745 /* EditProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE34092A78E84F00DFD745 /* EditProfileUseCase.swift */; };
 		FACE340C2A78FCB400DFD745 /* EditProfileUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE340B2A78FCB400DFD745 /* EditProfileUseCaseProtocol.swift */; };
 		FAEDAFAC2A5593DA004C4E5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDAFAB2A5593DA004C4E5A /* AppDelegate.swift */; };
@@ -150,6 +152,8 @@
 		FA8846EA2A77D2F700051287 /* UserRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequestDTO.swift; sourceTree = "<group>"; };
 		FA8846EC2A77D36E00051287 /* Encodable+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Dictionary.swift"; sourceTree = "<group>"; };
 		FA8846EE2A77D5BF00051287 /* UserDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataSourceProtocol.swift; sourceTree = "<group>"; };
+		FAA0950B2A8217D400507CD3 /* AutoLoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginUseCase.swift; sourceTree = "<group>"; };
+		FAA0950D2A821A6C00507CD3 /* AutoLoginUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginUseCaseProtocol.swift; sourceTree = "<group>"; };
 		FACE34092A78E84F00DFD745 /* EditProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileUseCase.swift; sourceTree = "<group>"; };
 		FACE340B2A78FCB400DFD745 /* EditProfileUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileUseCaseProtocol.swift; sourceTree = "<group>"; };
 		FAEDAFA82A5593DA004C4E5A /* CarrotClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarrotClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -281,6 +285,7 @@
 			children = (
 				FA8846C72A750A5800051287 /* SignInUseCaseProtocol.swift */,
 				FACE340B2A78FCB400DFD745 /* EditProfileUseCaseProtocol.swift */,
+				FAA0950D2A821A6C00507CD3 /* AutoLoginUseCaseProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -635,6 +640,7 @@
 				FA6329462A56E28600B8BE01 /* UserUseCase.swift */,
 				FA7F007A2A727DB800FEAB84 /* SignInUseCase.swift */,
 				FACE34092A78E84F00DFD745 /* EditProfileUseCase.swift */,
+				FAA0950B2A8217D400507CD3 /* AutoLoginUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -861,9 +867,11 @@
 				FA8846C52A75063C00051287 /* TokenRepositoryProtocol.swift in Sources */,
 				FA7F006B2A72386700FEAB84 /* UIViewController + RxLifeCycle.swift in Sources */,
 				FA6329452A56E27F00B8BE01 /* User.swift in Sources */,
+				FAA0950C2A8217D400507CD3 /* AutoLoginUseCase.swift in Sources */,
 				FA6329412A56E26900B8BE01 /* UserRepository.swift in Sources */,
 				FA6DE6E52A5ECCE800E80A0D /* ChatCoordinator.swift in Sources */,
 				FA8846C32A75036900051287 /* TokenRepository.swift in Sources */,
+				FAA0950E2A821A6C00507CD3 /* AutoLoginUseCaseProtocol.swift in Sources */,
 				FA7F006E2A726F6C00FEAB84 /* AuthDataSource.swift in Sources */,
 				FA8846D82A7787EF00051287 /* LoginViewModel.swift in Sources */,
 				FAEDB0112A559BA8004C4E5A /* ViewModel.swift in Sources */,

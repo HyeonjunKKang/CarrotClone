@@ -78,11 +78,19 @@ final class DIContainer {
             
             return useCase
         }
+        
+        container.register(AutoLoginUseCaseProtocol.self) { resolver in
+            var useCase = AutoLoginUseCase()
+            useCase.tokenRepository = resolver.resolve(TokenRepositoryProtocol.self)
+            
+            return useCase
+        }
     }
     
     private func registerViewModels() {
         container.register(LoginMainViewModel.self) { resolver in
             let viewModel = LoginMainViewModel()
+            viewModel.autologinUsecase = resolver.resolve(AutoLoginUseCaseProtocol.self)
             
             return viewModel
         }

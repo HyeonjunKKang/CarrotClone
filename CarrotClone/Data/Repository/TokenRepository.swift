@@ -64,6 +64,18 @@ struct TokenRepository: TokenRepositoryProtocol {
             emitter.onNext(verificationID)
             return Disposables.create()
         }
-        
+    }
+    
+    func loadUid() -> Observable<String> {
+        return Observable.create { emitter in
+            guard let data = keychainManager?.load(key: .uid),
+                  let uid = try? JSONDecoder().decode(String.self, from: data) else {
+                emitter.onError(TokenError.decode)
+                return Disposables.create()
+            }
+            
+            emitter.onNext(uid)
+            return Disposables.create()
+        }
     }
 }
