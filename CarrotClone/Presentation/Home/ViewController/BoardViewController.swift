@@ -203,11 +203,11 @@ final class BoardViewController: ViewController, UIScrollViewDelegate {
         contentView.snp.makeConstraints {
             $0.top.bottom.leading.trailing.equalTo(scrollView)
             $0.width.equalTo(scrollView)
-            $0.height.equalToSuperview()
+//            $0.height.equalToSuperview()
         }
         
         titleLabel.snp.makeConstraints {
-            $0.top.equalTo(scrollView).offset(30)
+            $0.top.equalTo(scrollView).offset(20)
             $0.leading.equalTo(scrollView).offset(20)
             $0.trailing.equalTo(scrollView).offset(-20)
         }

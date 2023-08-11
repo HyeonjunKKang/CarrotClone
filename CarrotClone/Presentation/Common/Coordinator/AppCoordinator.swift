@@ -45,7 +45,7 @@ final class AppCoordinator: BaseCoordinator<Void> {
     }
 
     private func showTab() {
-        navigationController.setNavigationBarHidden(false, animated: true)
+        navigationController.setNavigationBarHidden(true, animated: true)
         let tab = TabCoordinator(navigationController)
         coordinate(to: tab)
             .subscribe(onNext: { [weak self] in

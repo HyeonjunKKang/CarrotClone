@@ -75,8 +75,8 @@ final class HomeViewController: ViewController {
         let titleStackView = UIStackView(arrangedSubviews: [titleLabel, chevronButton])
         titleStackView.axis = .horizontal
         titleStackView.spacing = 8
-        
-        let titleView = UIView()
+            
+        let titleView = NavigationView()
         titleView.addSubview(titleStackView)
         titleStackView.snp.makeConstraints {
             $0.leading.equalToSuperview()
@@ -86,7 +86,8 @@ final class HomeViewController: ViewController {
         navigationItem.titleView = titleView
         
         chevronButton.rx.tap
-            .subscribe(onNext: chevronButtonTapped)
+            .subscribe(onNext: { self.chevronButtonTapped()
+            })
             .disposed(by: disposeBag)
     }
 
