@@ -173,7 +173,7 @@ final class BoardViewController: ViewController, UIScrollViewDelegate {
     
     // MARK: - Functions
     
-    private func setUpUIConstraints() {
+    private func setUpUIConstraints() { // 세로 스크롤뷰 방향잡기
         contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
     }
     
@@ -197,13 +197,11 @@ final class BoardViewController: ViewController, UIScrollViewDelegate {
     
                 
         scrollView.snp.makeConstraints {
-            $0.top.bottom.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.edges.equalTo(self.view)
         }
         
         contentView.snp.makeConstraints {
-            $0.top.bottom.leading.trailing.equalTo(scrollView)
-            $0.width.equalTo(scrollView)
-//            $0.height.equalToSuperview()
+            $0.edges.equalTo(scrollView)
         }
         
         titleLabel.snp.makeConstraints {
@@ -270,6 +268,17 @@ final class BoardViewController: ViewController, UIScrollViewDelegate {
         placeInsideButton.snp.makeConstraints {
             $0.centerY.equalTo(placeButton)
             $0.trailing.equalTo(placeButton).offset(-10)
+        }
+        
+        let aview = UIView()
+        aview.backgroundColor = .white
+
+        contentView.addSubview(aview)
+        aview.snp.makeConstraints {
+            $0.top.equalTo(placeButton.snp.bottom).offset(15)
+            $0.leading.trailing.equalTo(contentView).inset(20)
+            $0.bottom.equalTo(contentView)
+            $0.height.equalTo(500)
         }
         
         completeButton.snp.makeConstraints {
