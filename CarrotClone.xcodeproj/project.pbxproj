@@ -11,6 +11,7 @@
 		C80099F02A7BAD6700DF2DDF /* BoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80099EF2A7BAD6700DF2DDF /* BoardViewModel.swift */; };
 		C80099F22A7BAFDA00DF2DDF /* BoardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80099F12A7BAFDA00DF2DDF /* BoardCoordinator.swift */; };
 		C814699A2A8608440087FC0B /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81469992A8608440087FC0B /* NavigationView.swift */; };
+		C81469A22A88CA6F0087FC0B /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81469A12A88CA6F0087FC0B /* LocationViewController.swift */; };
 		C886E5F32A6BF2D8001B2D93 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C886E5F22A6BF2D7001B2D93 /* HomeViewCell.swift */; };
 		C8D25BB92A764DA100D590F6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D25BB82A764DA100D590F6 /* Item.swift */; };
 		FA63293D2A56E24E00B8BE01 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63293C2A56E24E00B8BE01 /* Keychain.swift */; };
@@ -88,6 +89,7 @@
 		C80099EF2A7BAD6700DF2DDF /* BoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewModel.swift; sourceTree = "<group>"; };
 		C80099F12A7BAFDA00DF2DDF /* BoardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCoordinator.swift; sourceTree = "<group>"; };
 		C81469992A8608440087FC0B /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		C81469A12A88CA6F0087FC0B /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		C886E5F22A6BF2D7001B2D93 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		C8D25BB82A764DA100D590F6 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		FA63293C2A56E24E00B8BE01 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 			children = (
 				FA63294E2A56E95A00B8BE01 /* HomeViewController.swift */,
 				C80099ED2A7BAB8900DF2DDF /* BoardViewController.swift */,
+				C81469A12A88CA6F0087FC0B /* LocationViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -697,6 +700,7 @@
 				FA6DE6E12A5ECB0400E80A0D /* TabCoordinator.swift in Sources */,
 				C886E5F32A6BF2D8001B2D93 /* HomeViewCell.swift in Sources */,
 				FA6329472A56E28600B8BE01 /* UserUseCase.swift in Sources */,
+				C81469A22A88CA6F0087FC0B /* LocationViewController.swift in Sources */,
 				FA6329512A56E96100B8BE01 /* HomeViewModel.swift in Sources */,
 				FAEEC01F2A6266730016E2A1 /* SignupPhoneNumberCoordinator.swift in Sources */,
 				FA6DE6E72A5ECCFE00E80A0D /* MyCarrotCoordinator.swift in Sources */,

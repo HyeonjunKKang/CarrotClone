@@ -11,7 +11,7 @@ import RxCocoa
 import SnapKit
 import Then
 
-final class BoardViewController: ViewController, UIScrollViewDelegate {
+final class BoardViewController: ViewController {
     
     // MARK: - Properties
     
@@ -167,7 +167,6 @@ final class BoardViewController: ViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         
         setUpUIConstraints()
-        scrollView.delegate = self
         navigationItem.title = "내 물건 팔기"
     }
     
@@ -177,10 +176,22 @@ final class BoardViewController: ViewController, UIScrollViewDelegate {
         contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
     }
     
+    private func navigateToLocationViewController() {
+        let locationViewController = LocationViewController()
+        locationViewController.hidesBottomBarWhenPushed = true // 탭 바 숨기기 설정
+        navigationController?.pushViewController(locationViewController, animated: true)
+    }
+    
     
     // MARK: - Binding
     
     override func bind() {
+        
+        placeButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                self?.navigateToLocationViewController()
+            })
+            .disposed(by: disposeBag)
         
     }
     
