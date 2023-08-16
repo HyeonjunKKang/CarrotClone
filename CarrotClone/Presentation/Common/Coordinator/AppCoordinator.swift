@@ -24,8 +24,19 @@ final class AppCoordinator: BaseCoordinator<Void> {
     
     override func start() -> Observable<Void> {
         setup(with: window)
-        showLoginMain()
+//        showLoginMain()
+        showSelectPhotos()
         return Observable.never()
+    }
+    
+    private func showSelectPhotos() {
+        let photos = PhotosCoordinator(navigationController)
+        
+        coordinate(to: photos)
+            .subscribe(onNext: {
+                print($0)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func showLoginMain() {

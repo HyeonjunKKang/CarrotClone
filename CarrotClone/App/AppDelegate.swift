@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import Photos
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 알림을 보내고자 합니다 라는 권한 요청 코드
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { bool,error in
+            
+        }
+        
+        // 사진 접근 권한을 요청함, 나중에 버튼 클릭시로 바꿔야함.
+        PHPhotoLibrary.requestAuthorization(for: .readWrite) { status in
             
         }
         

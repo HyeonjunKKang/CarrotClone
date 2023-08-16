@@ -57,8 +57,21 @@
 		FA8846F82A77D99700051287 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FA8846F72A77D99700051287 /* FirebaseStorage */; };
 		FAA0950C2A8217D400507CD3 /* AutoLoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0950B2A8217D400507CD3 /* AutoLoginUseCase.swift */; };
 		FAA0950E2A821A6C00507CD3 /* AutoLoginUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0950D2A821A6C00507CD3 /* AutoLoginUseCaseProtocol.swift */; };
+		FAA63ADB2A89E352001BAB5A /* UIImageView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA63ADA2A89E351001BAB5A /* UIImageView+Rx.swift */; };
+		FAB992992A84F56E008A1678 /* PhotosCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB992982A84F56E008A1678 /* PhotosCoordinator.swift */; };
+		FAB9929C2A84F60D008A1678 /* SelectPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9929B2A84F60D008A1678 /* SelectPhotoViewController.swift */; };
+		FAB9929E2A84FBB8008A1678 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9929D2A84FBB8008A1678 /* PhotoCollectionViewCell.swift */; };
+		FAB992A02A850B65008A1678 /* SelectPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9929F2A850B65008A1678 /* SelectPhotoViewModel.swift */; };
+		FAB992A42A850E0E008A1678 /* PhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB992A32A850E0E008A1678 /* PhotoRepository.swift */; };
+		FAB992A62A850ED1008A1678 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB992A52A850ED1008A1678 /* Photo.swift */; };
+		FAB992A82A850F83008A1678 /* PhotoRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB992A72A850F83008A1678 /* PhotoRepositoryProtocol.swift */; };
+		FAB992AA2A85106B008A1678 /* SelectPhotoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB992A92A85106B008A1678 /* SelectPhotoUseCase.swift */; };
+		FAB992AC2A8510ED008A1678 /* SelectPhotoUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB992AB2A8510ED008A1678 /* SelectPhotoUseCaseProtocol.swift */; };
+		FAB992AE2A85EE9C008A1678 /* SelectNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB992AD2A85EE9C008A1678 /* SelectNumberView.swift */; };
 		FACE340A2A78E84F00DFD745 /* EditProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE34092A78E84F00DFD745 /* EditProfileUseCase.swift */; };
 		FACE340C2A78FCB400DFD745 /* EditProfileUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE340B2A78FCB400DFD745 /* EditProfileUseCaseProtocol.swift */; };
+		FAD65FA22A89E1560065700F /* PhotoCCollectionViewCell+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD65FA12A89E1560065700F /* PhotoCCollectionViewCell+Rx.swift */; };
+		FAD65FA42A89E17A0065700F /* SelectNumberView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD65FA32A89E17A0065700F /* SelectNumberView+Rx.swift */; };
 		FAEDAFAC2A5593DA004C4E5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDAFAB2A5593DA004C4E5A /* AppDelegate.swift */; };
 		FAEDAFAE2A5593DA004C4E5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEDAFAD2A5593DA004C4E5A /* SceneDelegate.swift */; };
 		FAEDAFB52A5593E1004C4E5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAEDAFB42A5593E1004C4E5A /* Assets.xcassets */; };
@@ -154,8 +167,21 @@
 		FA8846EE2A77D5BF00051287 /* UserDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataSourceProtocol.swift; sourceTree = "<group>"; };
 		FAA0950B2A8217D400507CD3 /* AutoLoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginUseCase.swift; sourceTree = "<group>"; };
 		FAA0950D2A821A6C00507CD3 /* AutoLoginUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginUseCaseProtocol.swift; sourceTree = "<group>"; };
+		FAA63ADA2A89E351001BAB5A /* UIImageView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Rx.swift"; sourceTree = "<group>"; };
+		FAB992982A84F56E008A1678 /* PhotosCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCoordinator.swift; sourceTree = "<group>"; };
+		FAB9929B2A84F60D008A1678 /* SelectPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoViewController.swift; sourceTree = "<group>"; };
+		FAB9929D2A84FBB8008A1678 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		FAB9929F2A850B65008A1678 /* SelectPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoViewModel.swift; sourceTree = "<group>"; };
+		FAB992A32A850E0E008A1678 /* PhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepository.swift; sourceTree = "<group>"; };
+		FAB992A52A850ED1008A1678 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		FAB992A72A850F83008A1678 /* PhotoRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepositoryProtocol.swift; sourceTree = "<group>"; };
+		FAB992A92A85106B008A1678 /* SelectPhotoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoUseCase.swift; sourceTree = "<group>"; };
+		FAB992AB2A8510ED008A1678 /* SelectPhotoUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoUseCaseProtocol.swift; sourceTree = "<group>"; };
+		FAB992AD2A85EE9C008A1678 /* SelectNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNumberView.swift; sourceTree = "<group>"; };
 		FACE34092A78E84F00DFD745 /* EditProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileUseCase.swift; sourceTree = "<group>"; };
 		FACE340B2A78FCB400DFD745 /* EditProfileUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileUseCaseProtocol.swift; sourceTree = "<group>"; };
+		FAD65FA12A89E1560065700F /* PhotoCCollectionViewCell+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoCCollectionViewCell+Rx.swift"; sourceTree = "<group>"; };
+		FAD65FA32A89E17A0065700F /* SelectNumberView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectNumberView+Rx.swift"; sourceTree = "<group>"; };
 		FAEDAFA82A5593DA004C4E5A /* CarrotClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarrotClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAEDAFAB2A5593DA004C4E5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAEDAFAD2A5593DA004C4E5A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -286,6 +312,7 @@
 				FA8846C72A750A5800051287 /* SignInUseCaseProtocol.swift */,
 				FACE340B2A78FCB400DFD745 /* EditProfileUseCaseProtocol.swift */,
 				FAA0950D2A821A6C00507CD3 /* AutoLoginUseCaseProtocol.swift */,
+				FAB992AB2A8510ED008A1678 /* SelectPhotoUseCaseProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -374,6 +401,41 @@
 				FA8846EA2A77D2F700051287 /* UserRequestDTO.swift */,
 			);
 			path = DataMapping;
+			sourceTree = "<group>";
+		};
+		FAA63ADE2A89FC39001BAB5A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FAB9929B2A84F60D008A1678 /* SelectPhotoViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		FAA63ADF2A89FC3F001BAB5A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FAB9929F2A850B65008A1678 /* SelectPhotoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FAA63AE02A89FC42001BAB5A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAB9929D2A84FBB8008A1678 /* PhotoCollectionViewCell.swift */,
+				FAB992AD2A85EE9C008A1678 /* SelectNumberView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAB9929A2A84F5E9008A1678 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				FAA63AE02A89FC42001BAB5A /* View */,
+				FAA63ADE2A89FC39001BAB5A /* ViewController */,
+				FAA63ADF2A89FC3F001BAB5A /* ViewModel */,
+			);
+			path = Photos;
 			sourceTree = "<group>";
 		};
 		FACE340D2A79181100DFD745 /* ViewController */ = {
@@ -469,6 +531,7 @@
 			children = (
 				FAEDAFFB2A55986B004C4E5A /* Common */,
 				FA6DE6F82A6161FC00E80A0D /* Login */,
+				FAB9929A2A84F5E9008A1678 /* Photos */,
 				FA8846DE2A7794D900051287 /* Certify */,
 				FAEEC0202A6269120016E2A1 /* Signup */,
 				FA8846D92A778DEA00051287 /* EditProfile */,
@@ -503,6 +566,7 @@
 				FA6DE6E22A5ECCE000E80A0D /* HomeCoordinator.swift */,
 				FA6DE6E42A5ECCE800E80A0D /* ChatCoordinator.swift */,
 				FA6DE6E62A5ECCFE00E80A0D /* MyCarrotCoordinator.swift */,
+				FAB992982A84F56E008A1678 /* PhotosCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -603,6 +667,7 @@
 				FA6329402A56E26900B8BE01 /* UserRepository.swift */,
 				FA7F00762A727B4800FEAB84 /* AuthRepository.swift */,
 				FA8846C22A75036900051287 /* TokenRepository.swift */,
+				FAB992A32A850E0E008A1678 /* PhotoRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -611,6 +676,7 @@
 			isa = PBXGroup;
 			children = (
 				FA6329442A56E27F00B8BE01 /* User.swift */,
+				FAB992A52A850ED1008A1678 /* Photo.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -629,6 +695,7 @@
 				FA6329422A56E27900B8BE01 /* UserRepositoryProtocol.swift */,
 				FA7F00782A727BD900FEAB84 /* AuthRepositoryProtocol.swift */,
 				FA8846C42A75063C00051287 /* TokenRepositoryProtocol.swift */,
+				FAB992A72A850F83008A1678 /* PhotoRepositoryProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -641,6 +708,7 @@
 				FA7F007A2A727DB800FEAB84 /* SignInUseCase.swift */,
 				FACE34092A78E84F00DFD745 /* EditProfileUseCase.swift */,
 				FAA0950B2A8217D400507CD3 /* AutoLoginUseCase.swift */,
+				FAB992A92A85106B008A1678 /* SelectPhotoUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -680,6 +748,9 @@
 				FA8846E52A77BD6700051287 /* RxUIViewController + Alert.swift */,
 				FAEEC0272A6292730016E2A1 /* UITextField + Rx.swift */,
 				FA8846EC2A77D36E00051287 /* Encodable+Dictionary.swift */,
+				FAD65FA12A89E1560065700F /* PhotoCCollectionViewCell+Rx.swift */,
+				FAD65FA32A89E17A0065700F /* SelectNumberView+Rx.swift */,
+				FAA63ADA2A89E351001BAB5A /* UIImageView+Rx.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -865,6 +936,8 @@
 			files = (
 				FAEEC0252A627A5E0016E2A1 /* SignupViewModel.swift in Sources */,
 				FA8846C52A75063C00051287 /* TokenRepositoryProtocol.swift in Sources */,
+				FAB992AE2A85EE9C008A1678 /* SelectNumberView.swift in Sources */,
+				FAD65FA22A89E1560065700F /* PhotoCCollectionViewCell+Rx.swift in Sources */,
 				FA7F006B2A72386700FEAB84 /* UIViewController + RxLifeCycle.swift in Sources */,
 				FA6329452A56E27F00B8BE01 /* User.swift in Sources */,
 				FAA0950C2A8217D400507CD3 /* AutoLoginUseCase.swift in Sources */,
@@ -877,15 +950,19 @@
 				FAEDB0112A559BA8004C4E5A /* ViewModel.swift in Sources */,
 				FA6DE6F72A6161A400E80A0D /* LoginMainCoordinator.swift in Sources */,
 				FAEEC01D2A6171340016E2A1 /* LoginMainViewModel.swift in Sources */,
+				FAB992A62A850ED1008A1678 /* Photo.swift in Sources */,
 				FA8846CB2A777A3C00051287 /* SentMessageAlertView.swift in Sources */,
+				FAD65FA42A89E17A0065700F /* SelectNumberView+Rx.swift in Sources */,
 				FAEDB0132A559BFD004C4E5A /* Identifiable.swift in Sources */,
 				FA63294D2A56E94D00B8BE01 /* View.swift in Sources */,
 				FA8846E62A77BD6700051287 /* RxUIViewController + Alert.swift in Sources */,
 				FA6DE6E32A5ECCE000E80A0D /* HomeCoordinator.swift in Sources */,
 				FA7F007E2A7280EE00FEAB84 /* KeychainProtocol.swift in Sources */,
+				FAA63ADB2A89E352001BAB5A /* UIImageView+Rx.swift in Sources */,
 				FAEDB00F2A5599F2004C4E5A /* DIContainer.swift in Sources */,
 				FA63293F2A56E26300B8BE01 /* UserDataSource.swift in Sources */,
 				FA63294B2A56E29F00B8BE01 /* APIService.swift in Sources */,
+				FAB992A82A850F83008A1678 /* PhotoRepositoryProtocol.swift in Sources */,
 				FA8846E92A77D16E00051287 /* UserResponseDTO.swift in Sources */,
 				FA6DE6EA2A5ECE2900E80A0D /* ChatListViewController.swift in Sources */,
 				FAEDB0152A559C34004C4E5A /* ViewController.swift in Sources */,
@@ -897,6 +974,7 @@
 				FA7F00752A72795E00FEAB84 /* AuthDataSourceProtocol.swift in Sources */,
 				FACE340C2A78FCB400DFD745 /* EditProfileUseCaseProtocol.swift in Sources */,
 				FAEEC01F2A6266730016E2A1 /* SignupCoordinator.swift in Sources */,
+				FAB9929C2A84F60D008A1678 /* SelectPhotoViewController.swift in Sources */,
 				FA8846EF2A77D5BF00051287 /* UserDataSourceProtocol.swift in Sources */,
 				FA7F007B2A727DB800FEAB84 /* SignInUseCase.swift in Sources */,
 				FA6DE6E72A5ECCFE00E80A0D /* MyCarrotCoordinator.swift in Sources */,
@@ -908,18 +986,24 @@
 				FAEEC01B2A616BED0016E2A1 /* UIColor+CarrotColor.swift in Sources */,
 				FA63293D2A56E24E00B8BE01 /* Keychain.swift in Sources */,
 				FA63294F2A56E95A00B8BE01 /* HomeViewController.swift in Sources */,
+				FAB992A42A850E0E008A1678 /* PhotoRepository.swift in Sources */,
 				FA8846ED2A77D36E00051287 /* Encodable+Dictionary.swift in Sources */,
 				FA6329432A56E27900B8BE01 /* UserRepositoryProtocol.swift in Sources */,
 				FA6DE6FD2A61621700E80A0D /* LoginMainViewController.swift in Sources */,
 				FA6DE6ED2A5ECE5600E80A0D /* MyCarrotViewController.swift in Sources */,
 				FA8846C12A75021100051287 /* KeychainManagerProtocol.swift in Sources */,
 				FAEEC0282A6292740016E2A1 /* UITextField + Rx.swift in Sources */,
+				FAB992992A84F56E008A1678 /* PhotosCoordinator.swift in Sources */,
+				FAB9929E2A84FBB8008A1678 /* PhotoCollectionViewCell.swift in Sources */,
+				FAB992A02A850B65008A1678 /* SelectPhotoViewModel.swift in Sources */,
 				FA8846E22A779B5900051287 /* ProfileImageView.swift in Sources */,
 				FA7F00772A727B4800FEAB84 /* AuthRepository.swift in Sources */,
 				FAEDB0172A559CCB004C4E5A /* BaseCoordinator.swift in Sources */,
 				FA7F00692A72261F00FEAB84 /* CertifyViewModel.swift in Sources */,
 				FA8846D12A7786CD00051287 /* LoginCoordinator.swift in Sources */,
 				FA8846C82A750A5800051287 /* SignInUseCaseProtocol.swift in Sources */,
+				FAB992AC2A8510ED008A1678 /* SelectPhotoUseCaseProtocol.swift in Sources */,
+				FAB992AA2A85106B008A1678 /* SelectPhotoUseCase.swift in Sources */,
 				FAEEC0222A62694B0016E2A1 /* SignupViewController.swift in Sources */,
 				FA8846BF2A7501A800051287 /* KeychainManager.swift in Sources */,
 				FA7F00792A727BD900FEAB84 /* AuthRepositoryProtocol.swift in Sources */,
@@ -1023,7 +1107,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1077,7 +1161,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1098,6 +1182,7 @@
 				DEVELOPMENT_TEAM = 5QNWYK9LQY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CarrotClone/Resource/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진좀 써도 될까용😅";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1127,6 +1212,7 @@
 				DEVELOPMENT_TEAM = 5QNWYK9LQY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CarrotClone/Resource/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "사진좀 써도 될까용😅";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

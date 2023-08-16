@@ -61,6 +61,12 @@ final class DIContainer {
             
             return repository
         }
+        
+        container.register(PhotoRepositoryProtocol.self) { resolver in
+            var repository = PhotoRepository()
+            
+            return repository
+        }
     }
     
     private func registerUseCases() {
@@ -82,6 +88,13 @@ final class DIContainer {
         container.register(AutoLoginUseCaseProtocol.self) { resolver in
             var useCase = AutoLoginUseCase()
             useCase.tokenRepository = resolver.resolve(TokenRepositoryProtocol.self)
+            
+            return useCase
+        }
+        
+        container.register(SelectPhotoUseCaseProtocol.self) { resolver in
+            var useCase = SelectPhotoUseCase()
+            useCase.photoRepository = resolver.resolve(PhotoRepositoryProtocol.self)
             
             return useCase
         }
@@ -116,6 +129,13 @@ final class DIContainer {
         container.register(EditProfileViewModel.self) { resolver in
             let viewModel = EditProfileViewModel()
             viewModel.editProfileUseCase = resolver.resolve(EditProfileUseCaseProtocol.self)
+            
+            return viewModel
+        }
+        
+        container.register(SelectPhotoViewModel.self) { resolver in
+            let viewModel = SelectPhotoViewModel()
+            viewModel.selectPhotoUseCase = resolver.resolve(SelectPhotoUseCaseProtocol.self)
             
             return viewModel
         }
